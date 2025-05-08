@@ -18,7 +18,7 @@ const Software = () => {
   <div className='' >
               <div className='border-2 border-[#1b3d74] justify-items-center mb-6 rounded-lg'>
               <Image className=' py-8 mt-14'
-                    src="/word-logo-8.PNG"
+                    src="/word-logo-8.png"
                     alt="WORD LOGO"
                     width={90}
                     height={90}
@@ -30,7 +30,7 @@ const Software = () => {
               </div>
               <div className='border-2 rounded-lg border-[#1b3d74] justify-items-center mb-6'>
               <Image className=' py-8 mt-8 '
-                    src="/112-gmail_email_mail-512.PNG"
+                    src="/112-gmail_email_mail-512.png"
                     alt="EMAIL LOGO"
                     width={90}
                     height={90}
@@ -42,7 +42,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center mb-6 rounded-lg'>
               <Image className=' py-8 mt-6'
-                    src="/sage-removebg-preview 1.PNG"
+                    src="/sage-removebg-preview1.png"
                     alt="SAGE LOGO"
                     width={90}
                     height={90}
@@ -54,7 +54,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center mb-6 rounded-lg'>
               <Image className=' py-8 '
-                    src="/Logo.PNG"
+                    src="/Logo.png"
                     alt="WORDPRESS LOGO"
                     width={90}
                     height={90}
@@ -66,7 +66,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center mb-6 rounded-lg'>
               <Image className=' py-8'
-                    src="/power point 1.PNG"
+                    src="/powerpoint1.png"
                     alt="POWER POINT LOGO"
                     width={90}
                     height={90}
@@ -78,7 +78,7 @@ const Software = () => {
               </div>
               <div className='border-2 rounded-lg border-[#1b3d74] justify-items-center mb-6'>
               <Image className=' py-8 mt-14'
-                    src="/Logo (1).PNG"
+                    src="/Logo-1.png"
                     alt="ODOO LOGO"
                     width={90}
                     height={90}
@@ -90,7 +90,7 @@ const Software = () => {
               </div>
               <div className='border-2 rounded-lg border-[#1b3d74] justify-items-center mb-6'>
               <Image className=' py-8'
-                    src="/excel-logo-0.PNG"
+                    src="/excel-logo-0.png"
                     alt="EXCELL LOGO"
                     width={90}
                     height={90}
@@ -102,7 +102,7 @@ const Software = () => {
               </div>
               <div className='border-2 rounded-lg border-[#1b3d74] justify-items-center mb-6'>
               <Image className=' py-8'
-                    src="/Logo (2).PNG"
+                    src="/Logo-2.png"
                     alt="PHOTOSHOP LOGO"
                     width={90}
                     height={90}
@@ -128,7 +128,7 @@ const Software = () => {
   <div className=' grid grid-cols-2 grid-rows-4 gap-4 align-items: stretch justify-evenly content-evenly ' >
               <div className='border-2 border-[#1b3d74] rounded-lg justify-items-center'>
               <Image className=' py-8 mt-14'
-                    src="/word-logo-8.PNG"
+                    src="/word-logo-8.png"
                     alt="WORD LOGO"
                     width={90}
                     height={90}
@@ -140,7 +140,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] rounded-lg justify-items-center'>
               <Image className=' py-8 mt-8'
-                    src="/112-gmail_email_mail-512.PNG"
+                    src="/112-gmail_email_mail-512.png"
                     alt="EMAIL LOGO"
                     width={90}
                     height={90}
@@ -152,7 +152,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] rounded-lg justify-items-center'>
               <Image className=' py-8 mt-6'
-                    src="/sage-removebg-preview 1.PNG"
+                    src="/sage-removebg-preview1.png"
                     alt="SAGE LOGO"
                     width={90}
                     height={90}
@@ -164,7 +164,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] rounded-lg justify-items-center'>
               <Image className=' py-8 '
-                    src="/Logo.PNG"
+                    src="/Logo.png"
                     alt="WORDPRESS LOGO"
                     width={90}
                     height={90}
@@ -176,7 +176,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] rounded-lg justify-items-center'>
               <Image className=' py-8'
-                    src="/power point 1.PNG"
+                    src="/powerpoint1.png"
                     alt="POWER POINT LOGO"
                     width={90}
                     height={90}
@@ -188,7 +188,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] rounded-lg justify-items-center'>
               <Image className=' py-8 mt-14'
-                    src="/Logo (1).PNG"
+                    src="/Logo-1.png"
                     alt="ODOO LOGO"
                     width={90}
                     height={90}
@@ -200,7 +200,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] rounded-lg justify-items-center'>
               <Image className=' py-8'
-                    src="/excel-logo-0.PNG"
+                    src="/excel-logo-0.png"
                     alt="EXCELL LOGO"
                     width={90}
                     height={90}
@@ -212,7 +212,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] rounded-lg justify-items-center'>
               <Image className=' py-8'
-                    src="/Logo (2).PNG"
+                    src="/Logo-2.png"
                     alt="PHOTOSHOP LOGO"
                     width={90}
                     height={90}
@@ -240,7 +240,7 @@ const Software = () => {
       <div className=' grid grid-cols-3 grid-rows-2 gap-4 align-items: stretch justify-evenly content-evenly ' >
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8 mt-14'
-                    src="/word-logo-8.PNG"
+                    src="/word-logo-8.png"
                     alt="WORD LOGO"
                     width={90}
                     height={90}
@@ -252,7 +252,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8 mt-8'
-                    src="/112-gmail_email_mail-512.PNG"
+                    src="/112-gmail_email_mail-512.png"
                     alt="EMAIL LOGO"
                     width={90}
                     height={90}
@@ -264,7 +264,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8 mt-6'
-                    src="/sage-removebg-preview 1.PNG"
+                    src="/sage-removebg-preview1.png"
                     alt="SAGE LOGO"
                     width={90}
                     height={90}
@@ -276,7 +276,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8 '
-                    src="/Logo.PNG"
+                    src="/Logo.png"
                     alt="WORDPRESS LOGO"
                     width={90}
                     height={90}
@@ -288,7 +288,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8'
-                    src="/power point 1.PNG"
+                    src="/powerpoint1.png"
                     alt="POWER POINT LOGO"
                     width={90}
                     height={90}
@@ -300,7 +300,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8 mt-14'
-                    src="/Logo (1).PNG"
+                    src="/Logo-1.png"
                     alt="ODOO LOGO"
                     width={90}
                     height={90}
@@ -312,7 +312,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8'
-                    src="/excel-logo-0.PNG"
+                    src="/excel-logo-0.png"
                     alt="EXCELL LOGO"
                     width={90}
                     height={90}
@@ -324,7 +324,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8'
-                    src="/Logo (2).PNG"
+                    src="/Logo-2.png"
                     alt="PHOTOSHOP LOGO"
                     width={90}
                     height={90}
@@ -350,7 +350,7 @@ const Software = () => {
           <div className=' grid grid-cols-4 grid-rows-2 gap-4 align-items: stretch justify-evenly content-evenly ' >
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8 mt-14'
-                    src="/word-logo-8.PNG"
+                    src="/word-logo-8.png"
                     alt="WORD LOGO"
                     width={90}
                     height={90}
@@ -362,7 +362,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8 mt-8'
-                    src="/112-gmail_email_mail-512.PNG"
+                    src="/112-gmail_email_mail-512.png"
                     alt="EMAIL LOGO"
                     width={90}
                     height={90}
@@ -374,7 +374,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8 mt-6'
-                    src="/sage-removebg-preview 1.PNG"
+                    src="/sage-removebg-preview1.png"
                     alt="SAGE LOGO"
                     width={90}
                     height={90}
@@ -386,7 +386,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8 '
-                    src="/Logo.PNG"
+                    src="/Logo.png"
                     alt="WORDPRESS LOGO"
                     width={90}
                     height={90}
@@ -398,7 +398,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8'
-                    src="/power point 1.PNG"
+                    src="/powerpoint1.png"
                     alt="POWER POINT LOGO"
                     width={90}
                     height={90}
@@ -410,7 +410,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8 mt-14'
-                    src="/Logo (1).PNG"
+                    src="/Logo-1.png"
                     alt="ODOO LOGO"
                     width={90}
                     height={90}
@@ -422,7 +422,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8'
-                    src="/excel-logo-0.PNG"
+                    src="/excel-logo-0.png"
                     alt="EXCELL LOGO"
                     width={90}
                     height={90}
@@ -434,7 +434,7 @@ const Software = () => {
               </div>
               <div className='border-2 border-[#1b3d74] justify-items-center rounded-lg'>
               <Image className=' py-8'
-                    src="/Logo (2).PNG"
+                    src="/Logo-2.png"
                     alt="PHOTOSHOP LOGO"
                     width={90}
                     height={90}

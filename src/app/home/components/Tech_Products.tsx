@@ -17,7 +17,7 @@ const Tech_Products = () => {
       <div className=''>
         <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 pt-2 justify-items-center'>
         <Image className=''
-                                src="/key.PNG"
+                                src="/key.png"
                                 alt="USB key"
                                 width={70}
                                 height={70}
@@ -32,7 +32,7 @@ const Tech_Products = () => {
 
         <div className='bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center mt-4 rounded-lg'>
         <Image className=''
-                                src="/laptop.PNG"
+                                src="/laptop.png"
                                 alt="LAPTOP"
                                 width={70}
                                 height={70}
@@ -46,7 +46,7 @@ const Tech_Products = () => {
 
         <div className='bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center mt-4 rounded-lg'>
         <Image
-                                src="/charger.PNG"
+                                src="/charger.png"
                                 alt="charger"
                                 width={70}
                                 height={70}
@@ -60,7 +60,7 @@ const Tech_Products = () => {
 
         <div className='bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center mt-4 rounded-lg'>
         <Image
-                                src="/MOUSE.PNG"
+                                src="/MOUSE.png"
                                 alt="MOUSE"
                                 width={70}
                                 height={70}
@@ -74,7 +74,7 @@ const Tech_Products = () => {
 
         <div className='bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center mt-4 rounded-lg'>
         <Image
-                                src="/EYER.PNG"
+                                src="/EYER.png"
                                 alt="KEYBOARD"
                                 width={70}
                                 height={70}
@@ -102,7 +102,7 @@ const Tech_Products = () => {
 
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 pt-2 justify-items-center'>
           <Image className=''
-                                  src="/key.PNG"
+                                  src="/key.png"
                                   alt="USB key"
                                   width={70}
                                   height={70}
@@ -116,7 +116,7 @@ const Tech_Products = () => {
   
           <div className='bg-white rounded-lg border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/laptop.PNG"
+                                  src="/laptop.png"
                                   alt="LAPTOP"
                                   width={70}
                                   height={70}
@@ -130,7 +130,7 @@ const Tech_Products = () => {
   
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/charger.PNG"
+                                  src="/charger.png"
                                   alt="charger"
                                   width={70}
                                   height={70}
@@ -144,7 +144,7 @@ const Tech_Products = () => {
   
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/MOUSE.PNG"
+                                  src="/MOUSE.png"
                                   alt="MOUSE"
                                   width={70}
                                   height={70}
@@ -158,7 +158,7 @@ const Tech_Products = () => {
   
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/EYER.PNG"
+                                  src="/EYER.png"
                                   alt="KEYBOARD"
                                   width={70}
                                   height={70}
@@ -187,7 +187,7 @@ const Tech_Products = () => {
         <div className='grid grid-cols-3 grid-rows-2 gap-4 align-items: stretch justify-evenly content-evenly '>
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 pt-2 justify-items-center'>
           <Image className=''
-                                  src="/key.PNG"
+                                  src="/key.png"
                                   alt="USB key"
                                   width={70}
                                   height={70}
@@ -201,7 +201,7 @@ const Tech_Products = () => {
           </div>
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/laptop.PNG"
+                                  src="/laptop.png"
                                   alt="LAPTOP"
                                   width={70}
                                   height={70}
@@ -213,7 +213,7 @@ const Tech_Products = () => {
           </div>
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/charger.PNG"
+                                  src="/charger.png"
                                   alt="charger"
                                   width={70}
                                   height={70}
@@ -225,7 +225,7 @@ const Tech_Products = () => {
           </div>
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/MOUSE.PNG"
+                                  src="/MOUSE.png"
                                   alt="MOUSE"
                                   width={70}
                                   height={70}
@@ -237,7 +237,7 @@ const Tech_Products = () => {
           </div>
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/EYER.PNG"
+                                  src="/EYER.png"
                                   alt="KEYBOARD"
                                   width={70}
                                   height={70}
@@ -265,7 +265,7 @@ const Tech_Products = () => {
                 <div className='flex justify-evenly 	'>
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 pt-2 justify-items-center'>
           <Image className=''
-                                  src="/key.PNG"
+                                  src="/key.png"
                                   alt="USB key"
                                   width={70}
                                   height={70}
@@ -277,7 +277,7 @@ const Tech_Products = () => {
           </div>
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/laptop.PNG"
+                                  src="/laptop.png"
                                   alt="LAPTOP"
                                   width={70}
                                   height={70}
@@ -289,7 +289,7 @@ const Tech_Products = () => {
           </div>
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/charger.PNG"
+                                  src="/charger.png"
                                   alt="charger"
                                   width={70}
                                   height={70}
@@ -301,7 +301,7 @@ const Tech_Products = () => {
           </div>
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/MOUSE.PNG"
+                                  src="/MOUSE.png"
                                   alt="MOUSE"
                                   width={70}
                                   height={70}
@@ -313,7 +313,7 @@ const Tech_Products = () => {
           </div>
           <div className='rounded-lg bg-white border-2 border-[#1B3D74] px-6 py-2 justify-items-center'>
           <Image
-                                  src="/EYER.PNG"
+                                  src="/EYER.png"
                                   alt="KEYBOARD"
                                   width={70}
                                   height={70}

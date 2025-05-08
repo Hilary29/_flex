@@ -31,7 +31,7 @@ const HeroSection = () => {
             </button>
           </a>
           <video
-            src="/WhatsApp Video 2025-01-30 at 12.09.14.MP4 "
+            src="/hero.mp4 "
             autoPlay
             muted
             loop
@@ -94,7 +94,7 @@ const HeroSection = () => {
             <button className="engage ml-20">LEARN A SOFTWARE</button>
           </a>
           <video
-            src="/WhatsApp Video 2025-01-30 at 12.09.14.MP4 "
+            src="/hero.mp4 "
             autoPlay
             muted
             loop
@@ -125,7 +125,7 @@ const HeroSection = () => {
             <button className="engage ml-20">LEARN A SOFTWARE</button>
           </a>
           <video
-            src="/WhatsApp Video 2025-01-30 at 12.09.14.MP4 "
+            src="/hero.mp4 "
             autoPlay
             muted
             loop
