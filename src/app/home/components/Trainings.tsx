@@ -18,7 +18,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/infographie.PNG"
+              src="/infographie.png"
               alt="Woman sitting infront of a laptop"
               width={450}
               height={250}
@@ -33,7 +33,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/developpement_web.PNG"
+              src="/developpement_web.png"
               alt="codes on a pc"
               width={450}
               height={250}
@@ -48,7 +48,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/secretarat bureatque.PNG"
+              src="/secretaratbureatque.png"
               alt="Woman sitting presenting something"
               width={450}
               height={250}
@@ -63,7 +63,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/secretarat de drecrton.PNG"
+              src="/secretaratdedrecrton.png"
               alt="Woman sitting presenting something"
               width={450}
               height={250}
@@ -78,7 +78,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/secretarat comptable.PNG"
+              src="/secretaratcomptable.png"
               alt="Woman sitting infront of a laptop"
               width={450}
               height={250}
@@ -93,7 +93,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/maretng dgtal.PNG"
+              src="/maretngdgtal.png"
               alt="Woman sitting infront of a laptop"
               width={450}
               height={250}
@@ -108,7 +108,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/logstcs et transport.PNG"
+              src="/logstcsettransport.png"
               alt="people beside the port"
               width={450}
               height={250}
@@ -123,7 +123,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/douan et transit.PNG"
+              src="/douanettransit.png"
               alt="beside the port"
               width={450}
               height={250}
@@ -138,7 +138,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/maintenance.PNG"
+              src="/maintenance.png"
               alt="man repairing a pc"
               width={450}
               height={250}
@@ -153,7 +153,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/communty management.PNG"
+              src="/communtymanagement.png"
               alt="poeple discussing on a project"
               width={450}
               height={250}
@@ -168,7 +168,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/montage vdeo.PNG"
+              src="/montagevdeo.png"
               alt="camera image"
               width={450}
               height={250}
@@ -183,7 +183,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg mt-8"
-              src="/telecpmmuncaton.PNG"
+              src="/telecpmmuncaton.png"
               alt="signals"
               width={450}
               height={250}
@@ -209,7 +209,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/infographie.PNG"
+              src="/infographie.png"
               alt="Woman sitting infront of a laptop"
               width={450}
               height={250}
@@ -224,7 +224,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/developpement_web.PNG"
+              src="/developpement_web.png"
               alt="codes on a pc"
               width={450}
               height={250}
@@ -239,7 +239,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/secretarat bureatque.PNG"
+              src="/secretaratbureatque.png"
               alt="Woman sitting presenting something"
               width={450}
               height={250}
@@ -254,7 +254,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/secretarat de drecrton.PNG"
+              src="/secretaratdedrecrton.png"
               alt="Woman sitting presenting something"
               width={450}
               height={250}
@@ -269,7 +269,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/secretarat comptable.PNG"
+              src="/secretaratcomptable.png"
               alt="Woman sitting infront of a laptop"
               width={450}
               height={250}
@@ -284,7 +284,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/maretng dgtal.PNG"
+              src="/maretngdgtal.png"
               alt="Woman sitting infront of a laptop"
               width={450}
               height={250}
@@ -299,7 +299,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/logstcs et transport.PNG"
+              src="/logstcsettransport.png"
               alt="people beside the port"
               width={450}
               height={250}
@@ -314,7 +314,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/douan et transit.PNG"
+              src="/douanettransit.png"
               alt="beside the port"
               width={450}
               height={250}
@@ -329,7 +329,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/maintenance.PNG"
+              src="/maintenance.png"
               alt="man repairing a pc"
               width={450}
               height={250}
@@ -344,7 +344,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/communty management.PNG"
+              src="/communty management.png"
               alt="poeple discussing on a project"
               width={450}
               height={250}
@@ -359,7 +359,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/montage vdeo.PNG"
+              src="/montage vdeo.png"
               alt="camera image"
               width={450}
               height={250}
@@ -374,7 +374,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/telecpmmuncaton.PNG"
+              src="/telecpmmuncaton.png"
               alt="signals"
               width={450}
               height={250}
@@ -403,7 +403,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/infographie.PNG"
+                src="/infographie.png"
                 alt="Woman sitting infront of a laptop"
                 width={450}
                 height={250}
@@ -432,7 +432,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/developpement_web.PNG"
+                src="/developpement_web.png"
                 alt="codes on a pc"
                 width={450}
                 height={250}
@@ -462,7 +462,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/secretarat bureatque.PNG"
+                src="/secretarat bureatque.png"
                 alt="Woman sitting presenting something"
                 width={450}
                 height={250}
@@ -492,7 +492,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/secretarat de drecrton.PNG"
+                src="/secretarat de drecrton.png"
                 alt="Woman sitting presenting something"
                 width={450}
                 height={250}
@@ -522,7 +522,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/secretarat comptable.PNG"
+                src="/secretarat comptable.png"
                 alt="Woman sitting infront of a laptop"
                 width={450}
                 height={250}
@@ -551,7 +551,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/maretng dgtal.PNG"
+                src="/maretng dgtal.png"
                 alt="Woman sitting infront of a laptop"
                 width={450}
                 height={300}
@@ -579,7 +579,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/logstcs et transport.PNG"
+                src="/logstcs et transport.png"
                 alt="people beside the port"
                 width={450}
                 height={250}
@@ -608,7 +608,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/douan et transit.PNG"
+                src="/douan et transit.png"
                 alt="beside the port"
                 width={450}
                 height={250}
@@ -637,7 +637,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/maintenance.PNG"
+                src="/maintenance.png"
                 alt="man repairing a pc"
                 width={450}
                 height={250}
@@ -666,7 +666,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/communty management.PNG"
+                src="/communty management.png"
                 alt="poeple discussing on a project"
                 width={450}
                 height={250}
@@ -694,7 +694,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/montage vdeo.PNG"
+                src="/montage vdeo.png"
                 alt="camera image"
                 width={450}
                 height={250}
@@ -724,7 +724,7 @@ const Trainings = () => {
             <figure>
               <Image
                 className="rounded-lg"
-                src="/telecpmmuncaton.PNG"
+                src="/telecpmmuncaton.png"
                 alt="signals"
                 width={450}
                 height={250}
@@ -764,7 +764,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/infographie.PNG"
+              src="/infographie.png"
               alt="Woman sitting infront of a laptop"
               width={450}
               height={250}
@@ -779,7 +779,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/developpement_web.PNG"
+              src="/developpement_web.png"
               alt="codes on a pc"
               width={450}
               height={250}
@@ -794,7 +794,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/secretarat bureatque.PNG"
+              src="/secretarat bureatque.png"
               alt="Woman sitting presenting something"
               width={450}
               height={250}
@@ -809,7 +809,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/secretarat de drecrton.PNG"
+              src="/secretarat de drecrton.png"
               alt="Woman sitting presenting something"
               width={450}
               height={250}
@@ -824,7 +824,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/secretarat comptable.PNG"
+              src="/secretarat comptable.png"
               alt="Woman sitting infront of a laptop"
               width={450}
               height={250}
@@ -839,7 +839,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/maretng dgtal.PNG"
+              src="/maretng dgtal.png"
               alt="Woman sitting infront of a laptop"
               width={450}
               height={250}
@@ -854,7 +854,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/logstcs et transport.PNG"
+              src="/logstcs et transport.png"
               alt="people beside the port"
               width={450}
               height={250}
@@ -869,7 +869,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/douan et transit.PNG"
+              src="/douan et transit.png"
               alt="beside the port"
               width={450}
               height={250}
@@ -884,7 +884,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/maintenance.PNG"
+              src="/maintenance.png"
               alt="man repairing a pc"
               width={450}
               height={250}
@@ -899,7 +899,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/communty management.PNG"
+              src="/communty management.png"
               alt="poeple discussing on a project"
               width={450}
               height={250}
@@ -914,7 +914,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/montage vdeo.PNG"
+              src="/montage vdeo.png"
               alt="camera image"
               width={450}
               height={250}
@@ -929,7 +929,7 @@ const Trainings = () => {
           <div className="">
             <Image
               className="rounded-lg"
-              src="/telecpmmuncaton.PNG"
+              src="/telecpmmuncaton.png"
               alt="signals"
               width={450}
               height={250}

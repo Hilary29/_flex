@@ -93,7 +93,7 @@ const Landing: React.FC = () => {
                   <div className='flex gap-3 '>
                       <div>
                       <Image
-                      src="/location-icon.PNG"
+                      src="/location-icon.png"
                       alt="LOCATION LOGO"
                       width={50}
                       height={50}
