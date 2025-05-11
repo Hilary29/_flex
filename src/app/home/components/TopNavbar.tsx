@@ -17,8 +17,7 @@ const TopNavbar: React.FC = () => {
     <div>
 
       <div> 
-          <TopHeader content={contentArray} />
-           
+          <TopHeader content={contentArray} />       
       </div>
     </div>
   );

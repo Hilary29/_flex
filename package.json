@@ -1,5 +1,10 @@
 {
   "name": "flex_academy",
+  "author": {
+    "email": "keubouhilary@gmail.com",
+    "name": "Hilary Donfack",
+    "url": "https://www.linkedin.com/in/hilary-donfack-53073b243"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +16,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "bootstrap-icons": "^1.11.3",
+    "lucide-react": "^0.509.0",
     "next": "^15.0.3",
     "react": "^18.2.0",
     "react-carousel": "^4.3.0",
