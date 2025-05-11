@@ -113,7 +113,7 @@ const Header = () => {
               </Link>
             </nav>
 
-            <Link href="/register" className="px-6 py-2 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-base">
+            <Link href="/Register" className="px-6 py-2 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-base">
               Register
             </Link>
 
@@ -190,9 +190,9 @@ const Header = () => {
             </Link>
 
             <div className="flex flex-col gap-4 pt-2">
-              <button className="px-6 py-3 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-sm w-full md:w-auto">
-                Login
-              </button>
+              <Link href='/Register' className="px-6 py-3 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-sm w-full md:w-auto">
+                Register
+              </Link>
 
               <div className="flex items-center gap-1 cursor-pointer">
                 <span className="font-medium text-base">EN</span>

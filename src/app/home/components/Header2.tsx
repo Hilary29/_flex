@@ -114,7 +114,7 @@ const Header2 = () => {
             </nav>
 
             <Link
-              href="/register"
+              href="/Register"
               className="px-6 py-2 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-base"
             >
               Register
@@ -193,9 +193,9 @@ const Header2 = () => {
             </Link>
 
             <div className="flex flex-col gap-4 pt-2 items-center">
-              <button className="px-6 py-3 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-sm w-full md:w-auto">
+              <Link href='/Register' className="px-6 py-3 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-sm w-full md:w-auto">
                 Register
-              </button>
+              </Link>
 
               <div className="flex items-center gap-1 p-2 rounded-md cursor-pointer hover:bg-gray-100">
                 <span className="font-medium text-base">EN</span>
