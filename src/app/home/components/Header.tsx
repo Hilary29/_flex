@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
       <TopNavbar />
-      <div className="container mx-auto mt-8 px-4 flex flex-col items-center justify-between">
+      <div className=" mx-auto mt-8 px-4 md:px-8 flex flex-col items-center justify-between">
         <div className="w-full flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
