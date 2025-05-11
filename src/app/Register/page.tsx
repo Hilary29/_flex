@@ -9,7 +9,9 @@ export default function Home() {
       <div> 
         <TopNavbar/>
         <Header/>
-        <Register_page/>
+        <div className="pt-36">
+          <Register_page/>
+        </div>
         <Footer/>
       </div>
     );
