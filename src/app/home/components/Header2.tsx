@@ -1,12 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import TopNavbar from "./TopNavbar";
 
 const Header2 = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change background when scrolled past hero section (approx 760px height)
+      if (window.scrollY > 50) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -14,7 +32,9 @@ const Header2 = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+    <header
+      className={`fixed top-0 left-0 w-full ${isScrolled ? "bg-white" : "bg-transparent"} shadow-sm z-50 transition-colors duration-300`}
+    >
       <TopNavbar />
       <div className=" mx-auto mt-8 px-4 md:px-8 flex flex-col items-center justify-between">
         <div className="w-full flex items-center justify-between h-20">

@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+import { Inter, Roboto } from "next/font/google"
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// Load the Inter font
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+})
+
+// Load the Roboto font
+const roboto = Roboto({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+  weight: ["400", "500", "700", "900"],
+})
+
 
 export const metadata: Metadata = {
   title: "Flex Academy",
@@ -24,12 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={`${inter.variable} ${roboto.variable}`}>
+      <body className="min-h-screen">{children}</body>
     </html>
   );
 }

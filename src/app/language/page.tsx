@@ -8,7 +8,7 @@ import FAQ from '../home/components/FAQ'
 import Testimonials from '../home/components/Testimonials'
 import Tech_Products from '../home/components/Tech_Products'
 import VIP_trainings from '../home/components/VIP_trainings'
-import HeroSection from '../home/components/hero_section'
+import Hero from '../home/components/Hero'
 
 
 const Page = () => {
@@ -16,8 +16,8 @@ const Page = () => {
     <div className="min-h-screen">
       <TopNavbar />
       <Header2 />
-      <div className='mt-28'>
-        <HeroSection />
+      <div className='mt-0'>
+        <Hero />
       </div>
       <VIP_trainings />
       <Tech_Products />
