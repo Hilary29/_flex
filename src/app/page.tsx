@@ -17,7 +17,6 @@ import Footer from "./home/components/Footer";
 import Header from "./home/components/Header";
 
 export default function Home() {
-
   useEffect(() => {
     AOS.init({
       offset: 100,
@@ -32,10 +31,10 @@ export default function Home() {
     <div className="min-h-screen">
       <TopNavbar />
       <Header />
-{/*       <div className="mt-24">
+      {/*       <div className="mt-24">
         <Navbar />
       </div> */}
-      <div className='pt-28 '>
+      <div className="pt-28 ">
         <HeroSection />
       </div>
       <Test />

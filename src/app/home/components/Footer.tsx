@@ -5,18 +5,6 @@ const Footer = () => {
   return (
     <div>
       <div className="tablet:hidden block">
-        <div className="w-[80%] h-auto m-auto pt-[20px]">
-          <div className="your rounded-lg">
-            <h3>Register today to any of our programs </h3>
-
-            <a href="Register">
-              <div className=" rounded-lg absolute tracking-tight leading-3 mt-6 bg-[#1b3d74] text-white border-2 border-[#1b3d74] px-2 py-4 ">
-                <button>REGISTER</button>
-              </div>
-            </a>
-          </div>
-        </div>
-
         <div className="mt-4 bg-[#1b3d74] w-[100%] pt-4 h-[auto] text-white ">
           <div className="flex justify-between items-stretch content-evenly">
             <div>
@@ -70,15 +58,6 @@ const Footer = () => {
       </div>
 
       <div className=" hidden tablet:block largeTablet:hidden">
-        <div className="w-[80%] h-auto m-auto pt-[20px]">
-          <div className="your">
-            <h3>Register today to any of our programs </h3>
-            <div className="rounded-lg absolute tracking-tight leading-3 mt-6 ml-40 bg-[#1b3d74] text-white border-2 border-[#1b3d74] px-2 py-4 align-items-end #REGISTER ">
-              <button>REGISTER</button>
-            </div>
-          </div>
-        </div>
-
         <div className="mt-4 bg-[#1b3d74] w-[100%] pt-4 h-[auto] text-white ">
           <div className="flex justify-around items-stretch content-evenly">
             <div>
@@ -134,21 +113,6 @@ const Footer = () => {
       {/* for large screens */}
 
       <div className="hidden largeTablet:block bigDesktop:hidden">
-        <div className="w-[80%] h-auto m-auto pt-[20px]">
-          <div className="your rounded-lg ">
-            <h3 className="">Register today to any of our programs </h3>
-            <p>
-              Boost your confidence and expand your abilities, enroll today and
-              unlock new possibilities!
-            </p>
-            <a href="Register">
-              <div className="rounded-lg absolute tracking-tight leading-3 mt-6 ml-40 bg-[#1b3d74] text-white border-2 border-[#1b3d74] px-2 py-4 justify-end #REGISTER">
-                <button>REGISTER</button>
-              </div>
-            </a>
-          </div>
-        </div>
-
         <div className="mt-4 bg-[#1b3d74] w-[100%] pt-4 h-[auto] text-white ">
           <div className="flex justify-around items-stretch content-evenly">
             <div>
@@ -202,19 +166,6 @@ const Footer = () => {
 
       {/* for larger screens */}
       <div className="hidden bigDesktop:block">
-        <div className="w-[80%] h-auto m-auto pt-[20px] rounded-lg ">
-          <div className="your rounded-lg ">
-            <h3>Register today to any of our programs </h3>
-            <p>
-              Boost your confidence and expand your abilities, enroll today and
-              unlock new possibilities!
-            </p>
-          </div>
-          <div className="triall rounded-lg ">
-            <button>REGISTER</button>
-          </div>
-        </div>
-
         <div className="mt-4 bg-[#1b3d74] w-[100%] pt-4 h-[auto] text-white ">
           <div className="flex justify-around items-stretch content-evenly">
             <div>

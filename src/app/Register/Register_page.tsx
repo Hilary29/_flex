@@ -1,7 +1,6 @@
+"use client";
 
-'use client';
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface Register_pageData {
   firstName: string;
@@ -30,31 +29,35 @@ interface Register_pageData {
 
 const Register_page: React.FC = () => {
   const [formData, setFormData] = useState<Register_pageData>({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    address: '',
-    hasLaptop: '',
-    session: '',
-    center: '',
-    category: '',
-    software: '',
-    softwareStartDate: '',
-    trainingStartDate: '',
-    trainingTerm: '',
-    trainingMessage: '',
-    vipTrainingTraining: '',
-    vipTrainingStartDate: '',
-    vipTrainingTerm: '',
-    vipTrainingMessage: '',
-    specialTrainingTraining: '',
-    specialTrainingStartDate: '',
-    specialTrainingTerm: '',
-    specialTrainingMessage: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    address: "",
+    hasLaptop: "",
+    session: "",
+    center: "",
+    category: "",
+    software: "",
+    softwareStartDate: "",
+    trainingStartDate: "",
+    trainingTerm: "",
+    trainingMessage: "",
+    vipTrainingTraining: "",
+    vipTrainingStartDate: "",
+    vipTrainingTerm: "",
+    vipTrainingMessage: "",
+    specialTrainingTraining: "",
+    specialTrainingStartDate: "",
+    specialTrainingTerm: "",
+    specialTrainingMessage: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -72,23 +75,23 @@ const Register_page: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappNumber = '+237696696927'; // Replace with your WhatsApp number
-    
+    const whatsappNumber = "+237696696927"; // Replace with your WhatsApp number
+
     let message = `*Registration Form*\n\nName: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phoneNumber}\nAddress: ${formData.address}\nSession: ${formData.session}\nCenter: ${formData.center}\nCategory: ${formData.category}\n`;
 
-    if (formData.category === 'SOFTWARE') {
+    if (formData.category === "SOFTWARE") {
       message += `Software: ${formData.software}\nStart Date: ${formData.softwareStartDate}`;
     }
 
-    if (formData.category === 'TRAINING') {
+    if (formData.category === "TRAINING") {
       message += `Training Start Date: ${formData.trainingStartDate}\nTraining Term: ${formData.trainingTerm}\nTraining Message: ${formData.trainingMessage}`;
     }
 
-    if (formData.category === 'VIP TRAINING') {
+    if (formData.category === "VIP TRAINING") {
       message += `VIP Training: ${formData.vipTrainingTraining}\nStart Date: ${formData.vipTrainingStartDate}\nVIP Term: ${formData.vipTrainingTerm}\nVIP Message: ${formData.vipTrainingMessage}`;
     }
 
-    if (formData.category === 'SPECIAL TRAINING') {
+    if (formData.category === "SPECIAL TRAINING") {
       message += `Special Training: ${formData.specialTrainingTraining}\nStart Date: ${formData.specialTrainingStartDate}\nSpecial Term: ${formData.specialTrainingTerm}\nSpecial Message: ${formData.specialTrainingMessage}`;
     }
 
@@ -99,11 +102,16 @@ const Register_page: React.FC = () => {
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-semibold mb-6 text-center" id='Register'>Registration Form</h2>
+      <h2 className="text-2xl font-semibold mb-6 text-center" id="Register">
+        Registration Form
+      </h2>
       <form onSubmit={handleSubmit}>
         {/* First Name */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="firstName">
+          <label
+            className="block text-gray-700 font-medium mb-2"
+            htmlFor="firstName"
+          >
             First Name
           </label>
           <input
@@ -119,7 +127,10 @@ const Register_page: React.FC = () => {
 
         {/* Last Name */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="lastName">
+          <label
+            className="block text-gray-700 font-medium mb-2"
+            htmlFor="lastName"
+          >
             Last Name
           </label>
           <input
@@ -135,7 +146,10 @@ const Register_page: React.FC = () => {
 
         {/* Email */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="email">
+          <label
+            className="block text-gray-700 font-medium mb-2"
+            htmlFor="email"
+          >
             Email
           </label>
           <input
@@ -151,7 +165,10 @@ const Register_page: React.FC = () => {
 
         {/* Phone Number */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="phoneNumber">
+          <label
+            className="block text-gray-700 font-medium mb-2"
+            htmlFor="phoneNumber"
+          >
             WhatsApp Phone Number
           </label>
           <input
@@ -167,7 +184,10 @@ const Register_page: React.FC = () => {
 
         {/* Address */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="address">
+          <label
+            className="block text-gray-700 font-medium mb-2"
+            htmlFor="address"
+          >
             Address
           </label>
           <textarea
@@ -182,14 +202,16 @@ const Register_page: React.FC = () => {
 
         {/* Do you have a laptop? */}
         <div className="mb-4">
-          <span className="block text-gray-700 font-medium mb-2">Do you have a laptop?</span>
+          <span className="block text-gray-700 font-medium mb-2">
+            Do you have a laptop?
+          </span>
           <div className="flex space-x-4">
             <label className="flex items-center">
               <input
                 type="radio"
                 name="hasLaptop"
                 value="Yes"
-                checked={formData.hasLaptop === 'Yes'}
+                checked={formData.hasLaptop === "Yes"}
                 onChange={handleChange}
                 className="mr-2"
               />
@@ -200,7 +222,7 @@ const Register_page: React.FC = () => {
                 type="radio"
                 name="hasLaptop"
                 value="No"
-                checked={formData.hasLaptop === 'No'}
+                checked={formData.hasLaptop === "No"}
                 onChange={handleChange}
                 className="mr-2"
               />
@@ -218,7 +240,7 @@ const Register_page: React.FC = () => {
                 type="radio"
                 name="session"
                 value="MORNING"
-                checked={formData.session === 'MORNING'}
+                checked={formData.session === "MORNING"}
                 onChange={handleChange}
                 className="mr-2"
               />
@@ -229,7 +251,7 @@ const Register_page: React.FC = () => {
                 type="radio"
                 name="session"
                 value="EVENING"
-                checked={formData.session === 'EVENING'}
+                checked={formData.session === "EVENING"}
                 onChange={handleChange}
                 className="mr-2"
               />
@@ -247,7 +269,7 @@ const Register_page: React.FC = () => {
                 type="radio"
                 name="center"
                 value="DOUALA"
-                checked={formData.center === 'DOUALA'}
+                checked={formData.center === "DOUALA"}
                 onChange={handleChange}
                 className="mr-2"
               />
@@ -258,7 +280,7 @@ const Register_page: React.FC = () => {
                 type="radio"
                 name="center"
                 value="YAOUNDE"
-                checked={formData.center === 'YAOUNDE'}
+                checked={formData.center === "YAOUNDE"}
                 onChange={handleChange}
                 className="mr-2"
               />
@@ -269,7 +291,10 @@ const Register_page: React.FC = () => {
 
         {/* Category selection */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="category">
+          <label
+            className="block text-gray-700 font-medium mb-2"
+            htmlFor="category"
+          >
             Select Category
           </label>
           <select
@@ -289,11 +314,16 @@ const Register_page: React.FC = () => {
         </div>
 
         {/* Conditional Forms for each category */}
-        {formData.category === 'SOFTWARE' && (
+        {formData.category === "SOFTWARE" && (
           <div className="mt-4">
-            <h3 className="text-xl font-semibold mb-2">Software Registration</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              Software Registration
+            </h3>
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2" htmlFor="software">
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="software"
+              >
                 Which Software?
               </label>
               <input
@@ -306,7 +336,10 @@ const Register_page: React.FC = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2" htmlFor="softwareStartDate">
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="softwareStartDate"
+              >
                 Starting Date
               </label>
               <input
@@ -318,17 +351,19 @@ const Register_page: React.FC = () => {
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            <button type="submit" className="w-full p-3 mt-4 bg-blue-500 text-white rounded-md">
-              Submit Software Registration
-            </button>
           </div>
         )}
 
-        {formData.category === 'TRAINING' && (
+        {formData.category === "TRAINING" && (
           <div className="mt-4">
-            <h3 className="text-xl font-semibold mb-2">Training Registration</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              Training Registration
+            </h3>
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2" htmlFor="trainingStartDate">
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="trainingStartDate"
+              >
                 Training Start Date
               </label>
               <input
@@ -343,13 +378,15 @@ const Register_page: React.FC = () => {
 
             {/* Term for Training */}
             <div className="mb-4">
-              <span className="block text-gray-700 font-medium mb-2">Training Term</span>
+              <span className="block text-gray-700 font-medium mb-2">
+                Training Term
+              </span>
               <label className="flex items-center">
                 <input
                   type="radio"
                   name="trainingTerm"
                   value="Long"
-                  checked={formData.trainingTerm === 'Long'}
+                  checked={formData.trainingTerm === "Long"}
                   onChange={handleChange}
                   className="mr-2"
                 />
@@ -360,7 +397,7 @@ const Register_page: React.FC = () => {
                   type="radio"
                   name="trainingTerm"
                   value="Short"
-                  checked={formData.trainingTerm === 'Short'}
+                  checked={formData.trainingTerm === "Short"}
                   onChange={handleChange}
                   className="mr-2"
                 />
@@ -370,7 +407,10 @@ const Register_page: React.FC = () => {
 
             {/* Added Which Training for training category */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2" htmlFor="trainingMessage">
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="trainingMessage"
+              >
                 Which Training?
               </label>
               <input
@@ -382,18 +422,19 @@ const Register_page: React.FC = () => {
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-
-            <button type="submit" className="w-full p-3 mt-4 bg-blue-500 text-white rounded-md">
-              Submit Training Registration
-            </button>
           </div>
         )}
 
-        {formData.category === 'VIP TRAINING' && (
+        {formData.category === "VIP TRAINING" && (
           <div className="mt-4">
-            <h3 className="text-xl font-semibold mb-2">VIP Training Registration</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              VIP Training Registration
+            </h3>
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2" htmlFor="vipTrainingTraining">
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="vipTrainingTraining"
+              >
                 VIP Training
               </label>
               <input
@@ -406,7 +447,10 @@ const Register_page: React.FC = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2" htmlFor="vipTrainingStartDate">
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="vipTrainingStartDate"
+              >
                 Start Date
               </label>
               <input
@@ -420,13 +464,15 @@ const Register_page: React.FC = () => {
             </div>
 
             <div className="mb-4">
-              <span className="block text-gray-700 font-medium mb-2">VIP Training Term</span>
+              <span className="block text-gray-700 font-medium mb-2">
+                VIP Training Term
+              </span>
               <label className="flex items-center">
                 <input
                   type="radio"
                   name="vipTrainingTerm"
                   value="Long"
-                  checked={formData.vipTrainingTerm === 'Long'}
+                  checked={formData.vipTrainingTerm === "Long"}
                   onChange={handleChange}
                   className="mr-2"
                 />
@@ -437,7 +483,7 @@ const Register_page: React.FC = () => {
                   type="radio"
                   name="vipTrainingTerm"
                   value="Short"
-                  checked={formData.vipTrainingTerm === 'Short'}
+                  checked={formData.vipTrainingTerm === "Short"}
                   onChange={handleChange}
                   className="mr-2"
                 />
@@ -447,7 +493,10 @@ const Register_page: React.FC = () => {
 
             {/* Added VIP Message */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2" htmlFor="vipTrainingMessage">
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="vipTrainingMessage"
+              >
                 VIP Message
               </label>
               <input
@@ -459,18 +508,19 @@ const Register_page: React.FC = () => {
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-
-            <button type="submit" className="w-full p-3 mt-4 bg-blue-500 text-white rounded-md">
-              Submit VIP Training Registration
-            </button>
           </div>
         )}
 
-        {formData.category === 'SPECIAL TRAINING' && (
+        {formData.category === "SPECIAL TRAINING" && (
           <div className="mt-4">
-            <h3 className="text-xl font-semibold mb-2">Special Training Registration</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              Special Training Registration
+            </h3>
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2" htmlFor="specialTrainingTraining">
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="specialTrainingTraining"
+              >
                 Special Training
               </label>
               <input
@@ -483,7 +533,10 @@ const Register_page: React.FC = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2" htmlFor="specialTrainingStartDate">
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="specialTrainingStartDate"
+              >
                 Start Date
               </label>
               <input
@@ -497,13 +550,15 @@ const Register_page: React.FC = () => {
             </div>
 
             <div className="mb-4">
-              <span className="block text-gray-700 font-medium mb-2">Special Training Term</span>
+              <span className="block text-gray-700 font-medium mb-2">
+                Special Training Term
+              </span>
               <label className="flex items-center">
                 <input
                   type="radio"
                   name="specialTrainingTerm"
                   value="Long"
-                  checked={formData.specialTrainingTerm === 'Long'}
+                  checked={formData.specialTrainingTerm === "Long"}
                   onChange={handleChange}
                   className="mr-2"
                 />
@@ -514,7 +569,7 @@ const Register_page: React.FC = () => {
                   type="radio"
                   name="specialTrainingTerm"
                   value="Short"
-                  checked={formData.specialTrainingTerm === 'Short'}
+                  checked={formData.specialTrainingTerm === "Short"}
                   onChange={handleChange}
                   className="mr-2"
                 />
@@ -524,7 +579,10 @@ const Register_page: React.FC = () => {
 
             {/* Added Special Training Message */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2" htmlFor="specialTrainingMessage">
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="specialTrainingMessage"
+              >
                 Special Message
               </label>
               <input
@@ -536,12 +594,14 @@ const Register_page: React.FC = () => {
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-
-            <button type="submit" className="w-full p-3 mt-4 bg-blue-500 text-white rounded-md">
-              Submit Special Training Registration
-            </button>
           </div>
         )}
+        <button
+          type="submit"
+          className="w-full p-3 mt-4 bg-blue-500 text-white rounded-md"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );

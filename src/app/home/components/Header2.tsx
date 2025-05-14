@@ -33,7 +33,7 @@ const Header2 = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full ${isScrolled ? "bg-white" : "bg-transparent"} shadow-sm z-50 transition-colors duration-300`}
+      className={`fixed top-0 left-0 w-full ${isScrolled ? "bg-white" : "bg-transparent"} shadow-sm z-50 transition-colors duration-300  `}
     >
       <TopNavbar />
       <div className=" mx-auto mt-8 px-4 md:px-8 flex flex-col items-center justify-between">
