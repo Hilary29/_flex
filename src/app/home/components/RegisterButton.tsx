@@ -1,21 +1,22 @@
-'use client'
-import React from 'react';
+"use client"
+
+import type { ReactNode } from "react"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 interface RegisterButtonProps {
-  children: React.ReactNode;  // This allows the button to accept children
+  children: ReactNode
+  className?: string
+  onClick?: () => void
 }
 
-const RegisterButton: React.FC<RegisterButtonProps> = ({ children }) => {
-  const handleClick = () => {
-    window.location.href = '/Register';
-  };
-
+export default function RegisterButton({ children, className, onClick }: RegisterButtonProps) {
   return (
-    <button onClick={handleClick} className='text-white bg-[#1b3d74] border-2 border-[#1b3d74] w-1/2 px-2 py-2 rounded-lg'>
-      {children}  {/* This will render the children inside the button */}
-    </button>
-  );
-};
-
-export default RegisterButton;
-
+    <Button
+      className={cn("bg-[#1b3d74] hover:bg-[#152f58] text-white font-medium transition-colors", className)}
+      onClick={onClick}
+    >
+      {children}
+    </Button>
+  )
+}

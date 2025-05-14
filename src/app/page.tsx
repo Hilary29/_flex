@@ -6,15 +6,17 @@ import AOS from "aos";
 import TopNavbar from "./home/components/TopNavbar";
 /* import Navbar from "./home/components/Navbar"; */
 import HeroSection from "./home/components/hero_section";
-import Test from "./home/components/Test";
-import Software from "./home/components/Software";
+/* import Test from "./home/components/Test"; */
+/* import Software from "./home/components/Software"; */
 import Trainings from "./home/components/Trainings";
-import VIP_trainings from "./home/components/VIP_trainings";
-import Tech_Products from "./home/components/Tech_Products";
+/* import VIP_trainings from "./home/components/vip-trainings"; */
+import TechProducts from "./home/components/TechProducts";
 import Testimonials from "./home/components/Testimonials";
 import FAQ from "./home/components/FAQ";
 import Footer from "./home/components/Footer";
 import Header from "./home/components/Header";
+import SoftwareSection from "./home/components/software-section";
+import VipTrainings from "./home/components/vip-trainings";
 
 export default function Home() {
   useEffect(() => {
@@ -37,11 +39,13 @@ export default function Home() {
       <div className="pt-28 ">
         <HeroSection />
       </div>
-      <Test />
+      {/*       <Test /> */}
       <Trainings />
-      <Software />
-      <VIP_trainings />
-      <Tech_Products />
+      <SoftwareSection />
+      {/*       <Software /> */}
+      {/*       <VIP_trainings /> */}
+      <VipTrainings />
+      <TechProducts />
       <Testimonials />
       <FAQ />
       <Footer />

@@ -6,8 +6,8 @@ import TopNavbar from '../home/components/TopNavbar'
 import Footer from '../home/components/Footer'
 import FAQ from '../home/components/FAQ'
 import Testimonials from '../home/components/Testimonials'
-import Tech_Products from '../home/components/Tech_Products'
-import VIP_trainings from '../home/components/VIP_trainings'
+import Tech_Products from '../home/components/TechProducts'
+import VIP_trainings from '../home/components/vip-trainings'
 import Hero from '../home/components/Hero'
 
 

@@ -1,139 +1,86 @@
-import React from "react";
+"use client"
 
-const HeroSection = () => {
+import { useEffect, useRef } from "react"
+import Link from "next/link"
+import { motion } from "framer-motion"
+
+export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Ensure video plays properly
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.error("Video autoplay failed:", error)
+      })
+    }
+  }, [])
+
   return (
-    <div className="hero">
-      {/* for phones */}
+    <div className="min-h-[560px] bg-black bg-opacity-50 relative overflow-hidden">
+      {/* Video Background */}
+      <video
+        ref={videoRef}
+        src="/hero.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      ></video>
 
-      <div className="tablet:hidden block">
-        <div className="text-center pt-[50px] mx-auto">
-          <div id="welcome-style">
-            <h1 className="mt-50 py-4 text-[35px] font-bold text-white">
+      {/* Content Overlay */}
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+        <div className="pt-[50px] sm:pt-[50px] md:pt-[100px] lg:pt-[140px] mx-auto max-w-4xl">
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            id="welcome-style"
+            className="mb-4"
+          >
+            <h1 className="py-4 text-[30px] sm:text-[35px] md:text-[40px] lg:text-[45px] font-bold text-white">
               WELCOME TO FLEXACADEMY
             </h1>
-          </div>
-          <div id="through-style">
-            <p className="text-[15px] text-white text-lg">
+          </motion.div>
+
+          {/* Subheading */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            id="through-style"
+            className="mb-8"
+          >
+            <p className="text-[15px] sm:text-[20px] md:text-[22px] lg:text-[25px] text-white">
               It is through learning that we unlock our potentials{" "}
             </p>
-            <p className="text-[15px] text-white text-lg">
+            <p className="text-[15px] sm:text-[20px] md:text-[22px] lg:text-[25px] text-white">
               and shape a brighter future
             </p>
-          </div>
-          <a href="Trainings">
-            <button className="grid ml-[3rem] bg-[#1b3d74] px-[12px] py-[4px] rounded-3xl mt-10 text-white">
-              ENGAGE IN A TRAINING
-            </button>
-          </a>
-          <a href="Trainings">
-            <button className="grid ml-[4rem] bg-[#1b3d74] px-[12px] py-[4px] rounded-3xl mt-4 text-white ">
-              LEARN A SOFTWARE
-            </button>
-          </a>
-          <video
-            src="/hero.mp4 "
-            autoPlay
-            muted
-            loop
-          ></video>
-        </div>
-      </div>
+          </motion.div>
 
-      {/* for small screens */}
-      <div className="hidden tablet:block largeTablet:hidden">
-        <div className="text-center pt-[50px] mx-auto">
-          <div id="welcome-style">
-            <h1 className="mt-50 py-4 text-[35px] font-bold text-white">
-              WELCOME TO FLEXACADEMY
-            </h1>
-          </div>
-          <div id="through-style">
-            <p className="text-[20px] text-white text-lg">
-              It is through learning that we unlock our potentials{" "}
-            </p>
-            <p className="text-[20px] text-white text-lg">
-              and shape a brighter future
-            </p>
-          </div>
-          <a href="Trainings">
-            <button className="engage ">ENGAGE IN A TRAINING</button>
-          </a>
-          <a href="Trainings">
-            <button className="engage ml-8">LEARN A SOFTWARE</button>
-          </a>
-          <video
-            src="/hero.mp4"
-            autoPlay
-            muted
-            loop
-          ></video>
-        </div>
-      </div>
-
-      {/* for large screens */}
-
-      <div className="hidden largeTablet:block bigDesktop:hidden">
-        <div className="text-center pt-[140px] mx-auto">
-          <div id="welcome-style">
-            <h1 className="mt-150 py-4 text-[45px] font-bold text-white">
-              WELCOME TO FLEXACADEMY
-            </h1>
-          </div>
-          <div id="through-style">
-            <p className="text-[25px] text-white text-lg">
-              It is through learning that we unlock our potentials{" "}
-            </p>
-            <p className="text-[25px] text-white text-lg">
-              and shape a brighter future
-            </p>
-          </div>
-          <a href="Trainings">
-            <button className="engage ">ENGAGE IN A TRAINING</button>
-          </a>
-          <a href="Trainings">
-            <button className="engage ml-20">LEARN A SOFTWARE</button>
-          </a>
-          <video
-            src="/hero.mp4 "
-            autoPlay
-            muted
-            loop
-          ></video>
-        </div>
-      </div>
-
-      {/* for larger screens */}
-      <div className="hidden bigDesktop:block">
-        <div className="text-center pt-[140px] mx-auto">
-          <div id="welcome-style">
-            <h1 className="mt-90 py-4 text-[45px] font-bold text-white ">
-              WELCOME TO FLEXACADEMY
-            </h1>
-          </div>
-          <div id="through-style">
-            <p className="text-[25px] text-white text-lg">
-              It is through learning that we unlock our potentials{" "}
-            </p>
-            <p className="text-[25px] text-white text-lg">
-              and shape a brighter future
-            </p>
-          </div>
-          <a href="Trainings">
-            <button className="engage ">ENGAGE IN A TRAINING</button>
-          </a>
-          <a href="Trainings">
-            <button className="engage ml-20">LEARN A SOFTWARE</button>
-          </a>
-          <video
-            src="/hero.mp4 "
-            autoPlay
-            muted
-            loop
-          ></video>
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8"
+          >
+            <Link href="/Trainings">
+              <button className="bg-[#000D85] px-6 py-3 rounded-3xl text-white font-medium hover:bg-[#000a6b] transition-colors duration-300 min-w-[200px] sm:min-w-0">
+                ENGAGE IN A TRAINING
+              </button>
+            </Link>
+            <Link href="/Trainings">
+              <button className="bg-[#000D85] px-6 py-3 rounded-3xl text-white font-medium hover:bg-[#000a6b] transition-colors duration-300 min-w-[200px] sm:min-w-0">
+                LEARN A SOFTWARE
+              </button>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </div>
-  );
-};
-
-export default HeroSection;
+  )
+}

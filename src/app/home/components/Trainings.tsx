@@ -1,950 +1,240 @@
-import React from "react";
-import Image from "next/image";
-import RegisterButton from "./RegisterButton";
+"use client";
 
-const Trainings = () => {
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Search } from "lucide-react";
+import TrainingCard, { type TrainingType } from "./training-card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const trainingsData: TrainingType[] = [
+  {
+    id: "graphic-design",
+    title: "GRAPHIC DESIGN",
+    image: "/infographie.png",
+    alt: "Woman sitting in front of a laptop",
+    description:
+      "Graphic design is in high demand across various industries, offering career opportunities in fields like marketing, advertising, web development, and branding.",
+  },
+  {
+    id: "web-development",
+    title: "WEB DEVELOPMENT",
+    image: "/developpement_web.png",
+    alt: "Codes on a PC",
+    description:
+      "Learning web development opens up endless opportunities to create dynamic, interactive websites and applications, empowering you to bring your ideas to life and shape the digital world.",
+  },
+  {
+    id: "office-secretary",
+    title: "OFFICE SECRETARY",
+    image: "/secretaratbureatque.png",
+    alt: "Woman sitting presenting something",
+    description:
+      "Office secretary skills can provide you with essential organizational and communication abilities, opening doors to a wide range of administrative roles and making you an invaluable asset in any professional setting.",
+  },
+  {
+    id: "executive-secretary",
+    title: "EXECUTIVE SECRETARY",
+    image: "/secretaratdedrecrton.png",
+    alt: "Woman sitting presenting something",
+    description:
+      "Becoming an executive secretary will equip you with valuable organizational and communication skills, opening doors to exciting career opportunities and the chance to make a real impact in any organization.",
+  },
+  {
+    id: "accounting-secretary",
+    title: "ACCOUNTING SECRETARY",
+    image: "/secretaratcomptable.png",
+    alt: "Woman sitting in front of a laptop",
+    description:
+      "Mastering accounting secretary skills will empower you with essential financial knowledge, making you a key asset to any organization and opening up a range of career opportunities in the financial and administrative fields.",
+  },
+  {
+    id: "digital-marketing",
+    title: "DIGITAL MARKETING",
+    image: "/maretngdgtal.png",
+    alt: "Woman sitting in front of a laptop",
+    description:
+      "Learning digital marketing empowers you to connect with people, drive results, and stay at the forefront of industry trends in an ever-evolving digital landscape.",
+  },
+  {
+    id: "logistics-transport",
+    title: "LOGISTICS AND TRANSPORT",
+    image: "/logstcsettransport.png",
+    alt: "People beside the port",
+    description:
+      "Step into the dynamic world of logistics and transport, where you'll navigate supply chains, optimize routes, and master last-mile delivery to keep goods moving efficiently across the globe.",
+  },
+  {
+    id: "custom-transit",
+    title: "CUSTOM AND TRANSIT",
+    image: "/douanettransit.png",
+    alt: "Beside the port",
+    description:
+      "By learning logistics and transport, you gain the expertise to manage the flow of goods and services efficiently across the globe, contributing to smoother operations, cost savings, and better customer experiences.",
+  },
+  {
+    id: "it-maintenance",
+    title: "IT MAINTENANCE",
+    image: "/maintenance.png",
+    alt: "Man repairing a PC",
+    description:
+      "Mastering IT maintenance empowers you to keep systems running efficiently, solve technical issues quickly, and play a vital role in supporting the technology that drives businesses and everyday life.",
+  },
+  {
+    id: "community-management",
+    title: "COMMUNITY MANAGEMENT",
+    image: "/communtymanagement.png",
+    alt: "People discussing on a project",
+    description:
+      "Community management gives you the opportunity to create and nurture vibrant, engaged spaces where people can connect, share ideas, and work together to build something meaningful.",
+  },
+  {
+    id: "video-editing",
+    title: "VIDEO EDITING",
+    image: "/montagevdeo.png",
+    alt: "Camera image",
+    description:
+      "Video editing allows you to transform raw footage into captivating stories, giving you the power to engage audiences and communicate ideas in a dynamic and creative way.",
+  },
+  {
+    id: "telecommunication",
+    title: "TELECOMMUNICATION",
+    image: "/telecpmmuncaton.png",
+    alt: "Signals",
+    description:
+      "Step into the world of telecommunication, where concepts like bandwidth, 5G, and IoT are transforming industries and creating endless opportunities for those ready to innovate!",
+  },
+];
+
+export default function Trainings() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [category, setCategory] = useState("all");
+
+  // Filter trainings based on search term and category
+  const filteredTrainings = trainingsData.filter((training) => {
+    const matchesSearch =
+      training.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      training.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      false;
+
+    if (category === "all") return matchesSearch;
+
+    // Example categories - in a real app, you'd have proper categorization
+    const techCourses = [
+      "WEB DEVELOPMENT",
+      "IT MAINTENANCE",
+      "TELECOMMUNICATION",
+    ];
+    const businessCourses = [
+      "DIGITAL MARKETING",
+      "ACCOUNTING SECRETARY",
+      "EXECUTIVE SECRETARY",
+      "OFFICE SECRETARY",
+    ];
+    const creativeCourses = [
+      "GRAPHIC DESIGN",
+      "VIDEO EDITING",
+      "COMMUNITY MANAGEMENT",
+    ];
+    const logisticsCourses = ["LOGISTICS AND TRANSPORT", "CUSTOM AND TRANSIT"];
+
+    if (category === "tech" && techCourses.includes(training.title))
+      return matchesSearch;
+    if (category === "business" && businessCourses.includes(training.title))
+      return matchesSearch;
+    if (category === "creative" && creativeCourses.includes(training.title))
+      return matchesSearch;
+    if (category === "logistics" && logisticsCourses.includes(training.title))
+      return matchesSearch;
+
+    return false;
+  });
+
   return (
-    <div className="w-[80%] h-auto m-auto pt-[20px]">
-      <div className="tablet:hidden block">
-        <div className="text-[#373839] text-xl font-medium mt-[0.5px]">
-          <h2>We got you covered with full trainings 100% practicals</h2>
-        </div>
+    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center mb-10"
+      >
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#373839] mb-3">
+          We got you covered with full trainings 100% practicals
+        </h2>
+        <p className="text-lg sm:text-xl text-[#535557] max-w-3xl mx-auto">
+          Choose any training and allow us to change your future
+        </p>
+      </motion.div>
 
-        <div className="text-[#535557] text-lg font-medium mt-2">
-          <p>choose any training and allow us change your future</p>
+      <div className="flex flex-col sm:flex-row gap-4 mb-8">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+          <Input
+            type="text"
+            placeholder="Search for a training..."
+            className="pl-10"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </div>
-
-        <div className="">
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/infographie.png"
-              alt="Woman sitting infront of a laptop"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3 rounded-lg">
-                GRAPHIC DESIGN
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/developpement_web.png"
-              alt="codes on a pc"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3 ">
-                WEB DEVELLOPMENT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/secretaratbureatque.png"
-              alt="Woman sitting presenting something"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3 ">
-                OFFICE SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/secretaratdedrecrton.png"
-              alt="Woman sitting presenting something"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3">
-                EXECUTIVE SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/secretaratcomptable.png"
-              alt="Woman sitting infront of a laptop"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3 ">
-                ACCOUNTING SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/maretngdgtal.png"
-              alt="Woman sitting infront of a laptop"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3 ">
-                DIGITAL MARKETING
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/logstcsettransport.png"
-              alt="people beside the port"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3 ">
-                LOGISTICS AND TRANSPORT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/douanettransit.png"
-              alt="beside the port"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3 ">
-                CUSTOM AND TRANSIT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/maintenance.png"
-              alt="man repairing a pc"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3">
-                IT MAINTENANCE
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/communtymanagement.png"
-              alt="poeple discussing on a project"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3 ">
-                COMMUNITY MANAGEMENT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/montagevdeo.png"
-              alt="camera image"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-1 py-2 tracking-tight leading-3 ">
-                VIDEO EDITING
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg mt-8"
-              src="/telecpmmuncaton.png"
-              alt="signals"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-0 py-2 tracking-tighter leading-3">
-                TELECOMMUNICATION
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
+        <div className="w-full sm:w-48">
+          <Select value={category} onValueChange={setCategory}>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Category" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Categories</SelectItem>
+              <SelectItem value="tech">Technology</SelectItem>
+              <SelectItem value="business">Business</SelectItem>
+              <SelectItem value="creative">Creative</SelectItem>
+              <SelectItem value="logistics">Logistics</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
-      <div className="hidden tablet:block largeTablet:hidden">
-        <div className="text-[#373839] text-2xl font-medium">
-          <h2>We got you covered with full trainings 100% practicals</h2>
+      {filteredTrainings.length === 0 ? (
+        <div className="text-center py-12">
+          <p className="text-lg text-gray-600">
+            No trainings found matching your criteria.
+          </p>
+          <Button
+            variant="outline"
+            className="mt-4"
+            onClick={() => {
+              setSearchTerm("");
+              setCategory("all");
+            }}
+          >
+            Reset Filters
+          </Button>
         </div>
-        <div className="text-[#535557] text-xl font-medium">
-          <p>choose any training and allow us change your future</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredTrainings.map((training, index) => (
+            <TrainingCard
+              key={training.id}
+              training={training}
+              index={index}
+              showDescription={true}
+            />
+          ))}
         </div>
-        <div className="grid gap-4 grid-cols-3 align-items: stretch justify-evenly content-evenly">
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/infographie.png"
-              alt="Woman sitting infront of a laptop"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3">
-                GRAPHIC DESIGN
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/developpement_web.png"
-              alt="codes on a pc"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 ">
-                WEB DEVELLOPMENT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/secretaratbureatque.png"
-              alt="Woman sitting presenting something"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 ">
-                OFFICE SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/secretaratdedrecrton.png"
-              alt="Woman sitting presenting something"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3">
-                EXECUTIVE SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/secretaratcomptable.png"
-              alt="Woman sitting infront of a laptop"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 ">
-                ACCOUNTING SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/maretngdgtal.png"
-              alt="Woman sitting infront of a laptop"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 ">
-                DIGITAL MARKETING
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/logstcsettransport.png"
-              alt="people beside the port"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 ">
-                LOGISTICS AND TRANSPORT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/douanettransit.png"
-              alt="beside the port"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 ">
-                CUSTOM AND TRANSIT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/maintenance.png"
-              alt="man repairing a pc"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3">
-                IT MAINTENANCE
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/communtymanagement.png"
-              alt="poeple discussing on a project"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 ">
-                COMMUNITY MANAGEMENT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/montagevdeo.png"
-              alt="camera image"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 ">
-                VIDEO EDITING
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/telecpmmuncaton.png"
-              alt="signals"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] rounded-lg bg-white border-2 border-[#1b3d74] w-1/2 px-0 py-2 tracking-tighter leading-3">
-                TELECOMMUNICATION
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-        </div>
+      )}
+      <div className="flex flex-col sm:flex-row gap-4 mb-8 items-center justify-center pt-12">
+      <Button className="bg-[#000D85] hover:bg-[#010a62] px-6 py-4 rounded-full">
+        <span className="flex items-center text-base md:text-xl justify-center gap-1 ">
+          Register <ArrowRight className="h-4 w-4" />
+        </span>
+      </Button>
       </div>
-
-      {/* for large screens */}
-
-      <div className="hidden largeTablet:block bigDesktop:hidden">
-        <div className="text-[#373839] text-2xl font-medium mt-4">
-          <h2>We got you covered with full trainings 100% practicals</h2>
-        </div>
-        <div className="text-[#535557] text-xl font-medium">
-          <p>choose any training and allow us change your future</p>
-        </div>
-        <div className="grid gap-4 grid-cols-3 align-items: stretch justify-evenly content-evenly">
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/infographie.png"
-                alt="Woman sitting infront of a laptop"
-                width={450}
-                height={250}
-              />
-
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> GRAPHIC DESIGN</h2>
-                  <p className="text-base">
-                    {" "}
-                    Graphic design is in high demand across various industries,
-                    offering career opportunities in fields like marketing,
-                    advertising, web development, and branding.
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 rounded-lg">
-                GRAPHIC DESIGN
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/developpement_web.png"
-                alt="codes on a pc"
-                width={450}
-                height={250}
-              />
-
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> WEB DEVELLOPMENT</h2>
-                  <p className="text-base">
-                    {" "}
-                    Learning web development opens up endless opportunities to
-                    create dynamic, interactive websites and applications,
-                    empowering you to bring your ideas to life and shape the
-                    digital world.
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className=" text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2  py-2 tracking-tight leading-3 rounded-lg">
-                WEB DEVELLOPMENT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/secretaratbureatque.png"
-                alt="Woman sitting presenting something"
-                width={450}
-                height={250}
-              />
-
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> OFFICE SECRETARY</h2>
-                  <p className="text-base">
-                    {" "}
-                    office secretary skills can provide you with essential
-                    organizational and communication abilities, opening doors to
-                    a wide range of administrative roles and making you an
-                    invaluable asset in any professional setting.
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 rounded-lg">
-                OFFICE SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/secretaratdedrecrton.png"
-                alt="Woman sitting presenting something"
-                width={450}
-                height={250}
-              />
-
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> EXECUTIVE SECRETARY</h2>
-                  <p className="text-base">
-                    {" "}
-                    Becoming an executive secretary will equip you with valuable
-                    organizational and communication skills, opening doors to
-                    exciting career opportunities and the chance to make a real
-                    impact in any organization.
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full ">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 rounded-lg">
-                EXECUTIVE SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/secretaratcomptable.png"
-                alt="Woman sitting infront of a laptop"
-                width={450}
-                height={250}
-              />
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl mt-30"> ACCOUNTING SECRETARY</h2>
-                  <p className="text-base">
-                    {" "}
-                    Mastering accounting secretary skills will empower you with
-                    essential financial knowledge, making you a key asset to any
-                    organization and opening up a range of career opportunities
-                    in the financial and administrative fields.
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 rounded-lg">
-                ACCOUNTING SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/maretngdgtal.png"
-                alt="Woman sitting infront of a laptop"
-                width={450}
-                height={300}
-              />
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> DIGITAL MARKETING</h2>
-                  <p className="text-base">
-                    {" "}
-                    Learning digital marketing empowers you to connect with
-                    people, drive results, and stay at the forefront of industry
-                    trends in an ever-evolving digital landscape.
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 rounded-lg ">
-                DIGITAL MARKETING
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/logstcsettransport.png"
-                alt="people beside the port"
-                width={450}
-                height={250}
-              />
-
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> LOGISTICS AND TRANSPORT</h2>
-                  <p className="text-base">
-                    Step into the dynamic world of logistics and transport,
-                    where you’ll navigate supply chains, optimize routes, and
-                    master last-mile delivery to keep goods moving efficiently
-                    across the globe.
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 rounded-lg">
-                LOGISTICS AND TRANSPORT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/douanettransit.png"
-                alt="beside the port"
-                width={450}
-                height={250}
-              />
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> CUSTOM AND TRANSIT</h2>
-                  <p className="text-base">
-                    {" "}
-                    By learning logistics and transport, you gain the expertise
-                    to manage the flow of goods and services efficiently across
-                    the globe, contributing to smoother operations, cost
-                    savings, and better customer experiences.
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 rounded-lg">
-                CUSTOM AND TRANSIT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/maintenance.png"
-                alt="man repairing a pc"
-                width={450}
-                height={250}
-              />
-
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> IT MAINTENANCE</h2>
-                  <p className="text-base">
-                    Mastering IT maintenance empowers you to keep systems
-                    running efficiently, solve technical issues quickly, and
-                    play a vital role in supporting the technology that drives
-                    businesses and everyday life.
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 rounded-lg">
-                IT MAINTENANCE
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/communtymanagement.png"
-                alt="poeple discussing on a project"
-                width={450}
-                height={250}
-              />
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> COMMUNITY MANAGEMENT</h2>
-                  <p className="text-base">
-                    Community management gives you the opportunity to create and
-                    nurture vibrant, engaged spaces where people can connect,
-                    share ideas, and work together to build something
-                    meaningful.
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 rounded-lg ">
-                COMMUNITY MANAGEMENT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/montagevdeo.png"
-                alt="camera image"
-                width={450}
-                height={250}
-              />
-
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> VIDEO EDITING</h2>
-                  <p className="text-base">
-                    {" "}
-                    Video editing allows you to transform raw footage into
-                    captivating stories, giving you the power to engage
-                    audiences and communicate ideas in a dynamic and creative
-                    way
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-2 py-2 tracking-tight leading-3 rounded-lg">
-                VIDEO EDITING
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <figure>
-              <Image
-                className="rounded-lg"
-                src="/telecpmmuncaton.png"
-                alt="signals"
-                width={450}
-                height={250}
-              />
-
-              <figcaption>
-                <main>
-                  <h2 className="text-3xl"> TELECOMMUNICATION</h2>
-                  <p className="text-base">
-                    Step into the world of telecommunication, where concepts
-                    like bandwidth, 5G, and IoT are transforming industries and
-                    creating endless opportunities for those ready to innovate!
-                  </p>
-                </main>
-              </figcaption>
-            </figure>
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-0 py-2 tracking-tighter leading-3 rounded-lg">
-                TELECOMMUNICATION
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* for larger screens */}
-
-      <div className="hidden bigDesktop:block">
-        <div className="join ">
-          <h2>We got you covered with full trainings 100% practicals</h2>
-        </div>
-        <div className="practical_softwares">
-          <p>choose any training and allow us change your future</p>
-        </div>
-        <div className="grid gap-3 grid-cols-4 align-items: stretch justify-evenly content-evenly">
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/infographie.png"
-              alt="Woman sitting infront of a laptop"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg">
-                GRAPHIC DESIGN
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/developpement_web.png"
-              alt="codes on a pc"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg ">
-                WEB DEVELLOPMENT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/secretaratbureatque.png"
-              alt="Woman sitting presenting something"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg">
-                OFFICE SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/secretaratdedrecrton.png"
-              alt="Woman sitting presenting something"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg">
-                EXECUTIVE SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/secretaratcomptable.png"
-              alt="Woman sitting infront of a laptop"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg">
-                ACCOUNTING SECRETARY
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/maretngdgtal.png"
-              alt="Woman sitting infront of a laptop"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg">
-                DIGITAL MARKETING
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/logstcsettransport.png"
-              alt="people beside the port"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg ">
-                LOGISTICS AND TRANSPORT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/douanettransit.png"
-              alt="beside the port"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg">
-                CUSTOM AND TRANSIT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/maintenance.png"
-              alt="man repairing a pc"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg">
-                IT MAINTENANCE
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/communtymanagement.png"
-              alt="poeple discussing on a project"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg ">
-                COMMUNITY MANAGEMENT
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/montagevdeo.png"
-              alt="camera image"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-6 py-2 tracking-tight leading-3 rounded-lg">
-                VIDEO EDITING
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-          <div className="">
-            <Image
-              className="rounded-lg"
-              src="/telecpmmuncaton.png"
-              alt="signals"
-              width={450}
-              height={250}
-            />
-            <div className="flex w-full">
-              <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] w-1/2 px-0 py-2 tracking-tighter leading-3 rounded-lg">
-                TELECOMMUNICATION
-              </button>
-              <RegisterButton>REGISTER</RegisterButton>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
   );
-};
-
-export default Trainings;
+}
