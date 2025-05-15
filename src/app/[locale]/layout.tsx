@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Roboto } from "next/font/google"
+import {NextIntlClientProvider} from 'next-intl'
 
 // Load the Inter font
 const inter = Inter({
@@ -29,8 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${roboto.variable}`}>
-      <body className="min-h-screen">{children}</body>
+    <html lang="fr" className={`${inter.variable} ${roboto.variable}`}>
+      <body className="min-h-screen">
+        <NextIntlClientProvider>{children}</NextIntlClientProvider></body>
     </html>
   );
 }

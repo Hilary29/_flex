@@ -1,40 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import TopNavbar from "./TopNavbar";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { Link } from "@/i18n/routing";
 
-const Header2 = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Change background when scrolled past hero section (approx 760px height)
-      if (window.scrollY > 50) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
-  
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full ${isScrolled ? "bg-white" : "bg-transparent"} shadow-sm z-50 transition-colors duration-300  `}
-    >
+    <header className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
       <TopNavbar />
       <div className=" mx-auto mt-8 px-4 md:px-8 flex flex-col items-center justify-between">
         <div className="w-full flex items-center justify-between h-20">
@@ -66,18 +49,20 @@ const Header2 = () => {
               <div className="flex w-full h-full">
                 <Link
                   href="/"
-                  className="flex-1 h-full rounded-full flex items-center justify-center transition-all text-[#090909]"
-                >
-                  <span className="font-medium text-xs xl:text-[15px]">
-                    Professional Training
-                  </span>
-                </Link>
-                <Link
-                  href="/language"
                   className="flex-1 h-full rounded-full flex items-center justify-center transition-all bg-white border-2 border-[#0084FF] text-[#007AFF] shadow-sm"
                 >
                   <span className="font-medium text-xs xl:text-[17px]">
-                    Language courses
+                    {t('Header.Professional_training')}
+                  </span>
+                </Link>
+                
+                <Link
+                  href="/language"
+                  
+                  className="flex-1 h-full rounded-full flex items-center justify-center transition-all text-[#090909]"
+                >
+                  <span className="font-medium text-xs xl:text-[15px]">
+                    {t('Header.Language_courses')}
                   </span>
                 </Link>
               </div>
@@ -105,31 +90,31 @@ const Header2 = () => {
                 href="/"
                 className="font-medium text-base hover:text-gray-700"
               >
-                Home
+                {t('Header.Home')}
               </Link>
               <Link
                 href="/about"
                 className="font-medium text-base hover:text-gray-700"
               >
-                About us
+                {t('Header.About')}
               </Link>
               <Link
                 href="/Trainings"
                 className="font-medium text-base hover:text-gray-700"
               >
-                Trainings
+                {t('Header.Trainings')}
               </Link>
               <Link
                 href="/Shop"
                 className="font-medium text-base hover:text-gray-700"
               >
-                Shop
+                {t('Header.Shop')}
               </Link>
               <Link
                 href="/Contact"
                 className="font-medium text-base hover:text-gray-700"
               >
-                Contact
+                {t('Header.Contact')}
               </Link>
             </nav>
 
@@ -137,13 +122,14 @@ const Header2 = () => {
               href="/Register"
               className="px-6 py-2 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-base"
             >
-              Register
+              {t('Header.Register')}
             </Link>
 
-            <div className="flex items-center gap-1 p-2 rounded-md cursor-pointer hover:bg-gray-100">
+{/*             <div className="flex items-center gap-1 cursor-pointer">
               <span className="font-medium text-base">EN</span>
               <ChevronDown className="h-4 w-4" />
-            </div>
+            </div> */}
+            <LanguageSwitcher/>
           </div>
         </div>
 
@@ -151,22 +137,22 @@ const Header2 = () => {
         <div className="sm:hidden w-full pb-3">
           <div className="relative p-1 bg-gray-300 rounded-full w-[300px] mx-auto md:w-[300px] h-[40.5px]">
             <div className="flex w-full h-full">
-                <Link
-                  href="/"
-                  className="flex-1 h-full rounded-full flex items-center justify-center transition-all text-[#090909]"
-                >
-                  <span className="font-medium text-xs xl:text-[15px]">
-                    Professional Training
-                  </span>
-                </Link>
-                <Link
-                  href="/language"
-                  className="flex-1 h-full rounded-full flex items-center justify-center transition-all bg-white border-2 border-[#0084FF] text-[#007AFF] shadow-sm"
-                >
-                  <span className="font-medium text-xs xl:text-[17px]">
-                    Language courses
-                  </span>
-                </Link>
+              <Link
+                href="/"
+                className="flex-1 h-full rounded-full flex items-center justify-center transition-all bg-white border-2 border-[#0084FF] text-[#007AFF] shadow-sm"
+              >
+                <span className="font-medium text-xs xl:text-[17px]">
+                  {t('Header.Professional_training')}
+                </span>
+              </Link>
+              <Link
+                href="/language"
+                className="flex-1 h-full rounded-full flex items-center justify-center transition-all text-[#090909]"
+              >
+                <span className="font-medium text-xs xl:text-[15px]">
+                  {t('Header.Language_courses')}
+                </span>
+              </Link>
             </div>
           </div>
         </div>
@@ -174,53 +160,57 @@ const Header2 = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white max-w-sm mx-auto ">
-          <div className=" text-center pt-2 pb-4 space-y-1 ">
+        <div className="lg:hidden bg-white">
+          <div className="px-4 pt-2 pb-4 space-y-4">
             <Link
               href="/"
               className="block py-2 font-medium text-base hover:text-gray-700"
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              {t('Header.Home')}
             </Link>
             <Link
               href="/about"
               className="block py-2 font-medium text-base hover:text-gray-700"
               onClick={() => setIsMenuOpen(false)}
             >
-              About us
+              {t('Header.About')}
             </Link>
             <Link
-              href="/programs"
+              href="/Trainings"
               className="block py-2 font-medium text-base hover:text-gray-700"
               onClick={() => setIsMenuOpen(false)}
             >
-              Programs
+              {t('Header.Trainings')}
             </Link>
             <Link
-              href="/features"
+              href="/Shop"
               className="block py-2 font-medium text-base hover:text-gray-700"
               onClick={() => setIsMenuOpen(false)}
             >
-              Features
+              {t('Header.Shop')}
             </Link>
             <Link
               href="/contact"
               className="block py-2 font-medium text-base hover:text-gray-700"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              {t('Header.Contact')}
             </Link>
 
-            <div className="flex flex-col gap-4 pt-2 items-center">
-              <Link href='/Register' className="px-6 py-3 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-sm w-full md:w-auto">
-                Register
+            <div className="flex flex-col gap-4 pt-2">
+              <Link
+                href="/Register"
+                className="px-6 py-3 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-sm w-full md:w-auto"
+              >
+                {t('Header.Register')}
               </Link>
 
-              <div className="flex items-center gap-1 p-2 rounded-md cursor-pointer hover:bg-gray-100">
+{/*               <div className="flex items-center gap-1 cursor-pointer">
                 <span className="font-medium text-base">EN</span>
                 <ChevronDown className="h-4 w-4" />
-              </div>
+              </div> */}
+              <LanguageSwitcher/>
             </div>
           </div>
         </div>
@@ -229,4 +219,4 @@ const Header2 = () => {
   );
 };
 
-export default Header2;
+export default Header;

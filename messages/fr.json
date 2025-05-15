@@ -1,0 +1,36 @@
+{
+  "Header": {
+    "Home": "Accueil",
+    "About": "A propos",
+    "Services": "Services",
+    "Contact": "Contact",
+    "Contact_us": "Contactez-nous",
+    "Shop": "Boutique",
+    "Blog": "Blog",
+    "Register": "S'inscrire",
+    "Trainings": "Formations",
+    "Courses": "Cours",
+    "Professional_training": "Formation professionnelle",
+    "Language_courses": "Cours de langue"
+  },
+  "Hero": {
+    "Title": "BIENVENUE CHEZ FLEXACADEMY",
+    "Subtitle": "C'est en apprenant que nous libérons notre potentiel et construisons un avenir meilleur.",
+    "Engage_training": "Commencez une formation",
+    "Learn_software": "Apprenez un logiciel"
+  },
+  "Language_Hero": {
+    "Title": "Apprenez les langues avec confiance",
+    "title_part1": "Apprenez les",
+    "title_part2": "langues",
+    "title_part3": "avec passion et confiance",
+    "Explore_courses": "Découvrez nos cours",
+    "Subtitle": "C'est en apprenant que nous libérons notre potentiel et construisons un avenir meilleur."
+  },
+  "Services": {
+    "title": "Step 2 Title",
+    "EXPLANATION_PARAGRAPH1": "lorem ipsum",
+    "EXPLANATION_PARAGRAPH2": "lorem ipsum",
+    "EXPLANATION_PARAGRAPH3": "lorem ipsum"
+  }
+}

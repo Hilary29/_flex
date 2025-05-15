@@ -1,11 +1,13 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import Link from "next/link"
+import {Link} from "@/i18n/routing";
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
+    const t = useTranslations();
 
   // Ensure video plays properly
   useEffect(() => {
@@ -41,7 +43,7 @@ export default function HeroSection() {
             className="mb-4"
           >
             <h1 className="py-4 text-[30px] sm:text-[35px] md:text-[40px] lg:text-[45px] font-bold text-white">
-              WELCOME TO FLEXACADEMY
+              {t('Hero.Title')}
             </h1>
           </motion.div>
 
@@ -54,10 +56,7 @@ export default function HeroSection() {
             className="mb-8"
           >
             <p className="text-[15px] sm:text-[20px] md:text-[22px] lg:text-[25px] text-white">
-              It is through learning that we unlock our potentials{" "}
-            </p>
-            <p className="text-[15px] sm:text-[20px] md:text-[22px] lg:text-[25px] text-white">
-              and shape a brighter future
+              {t('Hero.Subtitle')}
             </p>
           </motion.div>
 
@@ -69,13 +68,13 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8"
           >
             <Link href="/Trainings">
-              <button className="bg-[#000D85] px-6 py-3 rounded-3xl text-white font-medium hover:bg-[#000a6b] transition-colors duration-300 min-w-[200px] sm:min-w-0">
-                ENGAGE IN A TRAINING
+              <button className="text-base sm:text-xl bg-[#000D85] px-6 py-3 rounded-3xl text-white font-medium hover:bg-[#000a6b] transition-colors duration-300 min-w-[200px] sm:min-w-0">
+                {t('Hero.Engage_training')}
               </button>
             </Link>
             <Link href="/Trainings">
-              <button className="bg-[#000D85] px-6 py-3 rounded-3xl text-white font-medium hover:bg-[#000a6b] transition-colors duration-300 min-w-[200px] sm:min-w-0">
-                LEARN A SOFTWARE
+              <button className="text-base sm:text-xl bg-[#000D85] px-6 py-3 rounded-3xl text-white font-medium hover:bg-[#000a6b] transition-colors duration-300 min-w-[200px] sm:min-w-0">
+                {t('Hero.Learn_software')}
               </button>
             </Link>
           </motion.div>
