@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Roboto } from "next/font/google"
 import {NextIntlClientProvider} from 'next-intl'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 // Load the Inter font
 const inter = Inter({
@@ -32,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${roboto.variable}`}>
       <body className="min-h-screen">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider></body>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <GoogleAnalytics gaId="G-ME29R070FS" />
+        </body>
     </html>
   );
 }
