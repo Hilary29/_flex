@@ -6,6 +6,7 @@ import { Search } from "lucide-react"
 import SoftwareCard, { type SoftwareType } from "./software-card"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useTranslations } from "next-intl";
 
 const softwareData: SoftwareType[] = [
   {
@@ -77,7 +78,8 @@ const softwareData: SoftwareType[] = [
 export default function SoftwareSection() {
   const [searchTerm, setSearchTerm] = useState("")
   const [activeTab, setActiveTab] = useState("all")
-
+  const t = useTranslations();
+  
   // Filter software based on search term and active tab
   const filteredSoftware = softwareData.filter((software) => {
     const matchesSearch = software.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -105,10 +107,10 @@ export default function SoftwareSection() {
         className="text-center mb-10"
       >
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#373839] mb-3">
-          Join us to learn any specific software of your choice
+          {t("Trainings.Title")}
         </h2>
         <p className="text-lg sm:text-xl text-[#535557] max-w-3xl mx-auto">
-          We offer 100% practical courses in any software of your choice
+          {t("Trainings.Subtitle")}
         </p>
       </motion.div>
 

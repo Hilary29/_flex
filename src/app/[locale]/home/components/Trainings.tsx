@@ -52,7 +52,7 @@ const getTrainingsData = (
   },
   {
     id: "executive-secretary",
-    title: "EXECUTIVE SECRETARY",
+    title: t("Trainings.EXECUTIVE_SECRETARY"),
     image: "/secretaratdedrecrton.png",
     alt: "Woman sitting presenting something",
     description:
@@ -60,7 +60,7 @@ const getTrainingsData = (
   },
   {
     id: "accounting-secretary",
-    title: "ACCOUNTING SECRETARY",
+    title: t("Trainings.ACCOUNTING_SECRETARY"),
     image: "/secretaratcomptable.png",
     alt: "Woman sitting in front of a laptop",
     description:
@@ -68,7 +68,7 @@ const getTrainingsData = (
   },
   {
     id: "digital-marketing",
-    title: "DIGITAL MARKETING",
+    title: t("Trainings.DIGITAL_MARKETING"),
     image: "/maretngdgtal.png",
     alt: "Woman sitting in front of a laptop",
     description:
@@ -76,7 +76,7 @@ const getTrainingsData = (
   },
   {
     id: "logistics-transport",
-    title: "LOGISTICS AND TRANSPORT",
+    title: t("Trainings.LOGISTICS_AND_TRANSPORT"),
     image: "/logstcsettransport.png",
     alt: "People beside the port",
     description:
@@ -84,7 +84,7 @@ const getTrainingsData = (
   },
   {
     id: "custom-transit",
-    title: "CUSTOM AND TRANSIT",
+    title: t("Trainings.CUSTOM_AND_TRANSIT"),
     image: "/douanettransit.png",
     alt: "Beside the port",
     description:
@@ -92,7 +92,7 @@ const getTrainingsData = (
   },
   {
     id: "it-maintenance",
-    title: "IT MAINTENANCE",
+    title: t("Trainings.IT_MAINTENANCE"),
     image: "/maintenance.png",
     alt: "Man repairing a PC",
     description:
@@ -100,7 +100,7 @@ const getTrainingsData = (
   },
   {
     id: "community-management",
-    title: "COMMUNITY MANAGEMENT",
+    title: t("Trainings.COMMUNITY_MANAGEMENT"),
     image: "/communtymanagement.png",
     alt: "People discussing on a project",
     description:
@@ -108,7 +108,7 @@ const getTrainingsData = (
   },
   {
     id: "video-editing",
-    title: "VIDEO EDITING",
+    title: t("Trainings.VIDEO_EDITING"),
     image: "/montagevdeo.png",
     alt: "Camera image",
     description:
@@ -116,7 +116,7 @@ const getTrainingsData = (
   },
   {
     id: "telecommunication",
-    title: "TELECOMMUNICATION",
+    title: t("Trainings.TELECOMMUNICATION"),
     image: "/telecpmmuncaton.png",
     alt: "Signals",
     description:
@@ -179,10 +179,10 @@ export default function Trainings() {
         className="text-center mb-10"
       >
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#373839] mb-3">
-          We got you covered with full trainings 100% practicals
+          {t("Trainings.Title")}
         </h2>
         <p className="text-lg sm:text-xl text-[#535557] max-w-3xl mx-auto">
-          Choose any training and allow us to change your future
+          {t("Trainings.Subtitle")}
         </p>
       </motion.div>
 
@@ -203,11 +203,11 @@ export default function Trainings() {
               <SelectValue placeholder="Category" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Categories</SelectItem>
-              <SelectItem value="tech">Technology</SelectItem>
-              <SelectItem value="business">Business</SelectItem>
-              <SelectItem value="creative">Creative</SelectItem>
-              <SelectItem value="logistics">Logistics</SelectItem>
+              <SelectItem value="all">{t("Trainings.All_Categories")}</SelectItem>
+              <SelectItem value="tech">{t("Trainings.Technology")}</SelectItem>
+              <SelectItem value="business">{t("Trainings.Business")}</SelectItem>
+              <SelectItem value="creative">{t("Trainings.Creative")}</SelectItem>
+              <SelectItem value="logistics">{t("Trainings.Logistics")}</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -226,7 +226,7 @@ export default function Trainings() {
               setCategory("all");
             }}
           >
-            Reset Filters
+            {t("Trainings.Reset_filters")}
           </Button>
         </div>
       ) : (
@@ -244,7 +244,7 @@ export default function Trainings() {
       <div className="flex flex-col sm:flex-row gap-4 mb-8 items-center justify-center pt-12">
         <Button className="bg-[#000D85] hover:bg-[#010a62] px-6 py-4 rounded-full">
           <span className="flex items-center text-base md:text-xl justify-center gap-1 ">
-            Register <ArrowRight className="h-4 w-4" />
+            {t("Header.Register")} <ArrowRight className="h-4 w-4" />
           </span>
         </Button>
       </div>

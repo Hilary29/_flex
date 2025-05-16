@@ -28,6 +28,8 @@
     "Explore_courses": "Explore courses"
   },
   "Trainings": {
+    "Title": "We got you covered with full trainings 100% practicals",
+    "Subtitle": "Choose any training and allow us to change your future",
     "Trainings": "Trainings",
     "WEB_DEVELOPMENT": "WEB DEVELOPMENT",
     "IT_MAINTENANCE": "IT MAINTENANCE",
@@ -40,11 +42,17 @@
     "VIDEO_EDITING": "VIDEO EDITING",
     "COMMUNITY_MANAGEMENT": "COMMUNITY MANAGEMENT",
     "LOGISTICS_AND_TRANSPORT": "LOGISTICS AND TRANSPORT",
-    "CUSTOM_AND_TRANSIT": "CUSTOM AND TRANSIT"
+    "CUSTOM_AND_TRANSIT": "CUSTOM AND TRANSIT",
+    "Reset_filters": "Reset Filters",
+    "All_Categories": "All Categories",
+    "Technology": "Technology",
+    "Business": "Business",
+    "Creative": "Creative",
+    "Logistics": "Logistics"
   },
   "Software": {
-    "Title": "Software",
-    "Subtitle": "Learn to use the most popular and in-demand software in the market."
+    "Title": "Join us to learn any specific software of your choice",
+    "Subtitle": "We offer 100% practical courses in any software of your choice"
   },
   "Vip": {
     "Title": "VIP",

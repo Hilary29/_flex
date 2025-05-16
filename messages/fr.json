@@ -28,6 +28,8 @@
     "Subtitle": "C'est en apprenant que nous libérons notre potentiel et construisons un avenir meilleur."
   },
   "Trainings": {
+    "Title": "Nous avons tout prévu avec des formations 100% pratiques",
+    "Subtitle": "Nous avons tout prévu avec des formations 100% pratiques",
     "Trainings": "Formations",
     "WEB_DEVELOPMENT": "DÉVELOPPEMENT WEB",
     "IT_MAINTENANCE": "MAINTENANCE INFORMATIQUE",
@@ -40,11 +42,17 @@
     "VIDEO_EDITING": "MONTAGE VIDÉO",
     "COMMUNITY_MANAGEMENT": "COMMUNITY MANAGEMENT",
     "LOGISTICS_AND_TRANSPORT": "LOGISTIQUE ET TRANSPORT",
-    "CUSTOM_AND_TRANSIT": "DOUANE ET TRANSIT"
+    "CUSTOM_AND_TRANSIT": "DOUANE ET TRANSIT",
+    "Reset_filters": "Réinitialiser",
+    "All_Categories": "Toutes les catégories",
+    "Technology": "Technologie",
+    "Business": "Business",
+    "Creative": "Créatif",
+    "Logistics": "Logistique"
   },
   "Software": {
-    "Title": "Logiciels",
-    "Subtitle": "Apprenez à utiliser les logiciels les plus populaires et les plus demandés sur le marché."
+    "Title": "Rejoignez-nous pour apprendre un logiciel spécifique de votre choix",
+    "Subtitle": "Nous proposons des cours 100% pratiques sur n'importe quel logiciel de votre choix."
   },
   "Vip": {
     "Title": "VIP",
