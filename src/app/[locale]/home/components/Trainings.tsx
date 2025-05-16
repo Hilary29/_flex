@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Search } from "lucide-react";
-import TrainingCard, { type TrainingType } from "./training-card";
+import TrainingCard from "./training-card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,11 +13,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useTranslations } from "next-intl";
 
-const trainingsData: TrainingType[] = [
+type TrainingType = {
+  id: string;
+  title: string;
+  image: string;
+  alt: string;
+  description: string;
+};
+
+const getTrainingsData = (
+  t: ReturnType<typeof useTranslations>
+): TrainingType[] => [
   {
     id: "graphic-design",
-    title: "GRAPHIC DESIGN",
+    title: t("Trainings.GRAPHIC_DESIGN"),
     image: "/infographie.png",
     alt: "Woman sitting in front of a laptop",
     description:
@@ -25,7 +36,7 @@ const trainingsData: TrainingType[] = [
   },
   {
     id: "web-development",
-    title: "WEB DEVELOPMENT",
+    title: t("Trainings.WEB_DEVELOPMENT"),
     image: "/developpement_web.png",
     alt: "Codes on a PC",
     description:
@@ -33,7 +44,7 @@ const trainingsData: TrainingType[] = [
   },
   {
     id: "office-secretary",
-    title: "OFFICE SECRETARY",
+    title: t("Trainings.OFFICE_SECRETARY"),
     image: "/secretaratbureatque.png",
     alt: "Woman sitting presenting something",
     description:
@@ -116,6 +127,8 @@ const trainingsData: TrainingType[] = [
 export default function Trainings() {
   const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("all");
+  const t = useTranslations();
+  const trainingsData = getTrainingsData(t);
 
   // Filter trainings based on search term and category
   const filteredTrainings = trainingsData.filter((training) => {
@@ -229,11 +242,11 @@ export default function Trainings() {
         </div>
       )}
       <div className="flex flex-col sm:flex-row gap-4 mb-8 items-center justify-center pt-12">
-      <Button className="bg-[#000D85] hover:bg-[#010a62] px-6 py-4 rounded-full">
-        <span className="flex items-center text-base md:text-xl justify-center gap-1 ">
-          Register <ArrowRight className="h-4 w-4" />
-        </span>
-      </Button>
+        <Button className="bg-[#000D85] hover:bg-[#010a62] px-6 py-4 rounded-full">
+          <span className="flex items-center text-base md:text-xl justify-center gap-1 ">
+            Register <ArrowRight className="h-4 w-4" />
+          </span>
+        </Button>
       </div>
     </section>
   );

@@ -27,10 +27,48 @@
     "Explore_courses": "Découvrez nos cours",
     "Subtitle": "C'est en apprenant que nous libérons notre potentiel et construisons un avenir meilleur."
   },
-  "Services": {
-    "title": "Step 2 Title",
-    "EXPLANATION_PARAGRAPH1": "lorem ipsum",
-    "EXPLANATION_PARAGRAPH2": "lorem ipsum",
-    "EXPLANATION_PARAGRAPH3": "lorem ipsum"
+  "Trainings": {
+    "Trainings": "Formations",
+    "WEB_DEVELOPMENT": "DÉVELOPPEMENT WEB",
+    "IT_MAINTENANCE": "MAINTENANCE INFORMATIQUE",
+    "TELECOMMUNICATION": "TÉLÉCOMMUNICATION",
+    "DIGITAL_MARKETING": "MARKETING NUMÉRIQUE",
+    "ACCOUNTING_SECRETARY": "SECRÉTAIRE COMPTABLE",
+    "EXECUTIVE_SECRETARY": "SECRÉTAIRE EXÉCUTIF",
+    "OFFICE_SECRETARY": "SECRÉTARIAT BUREAUTIQUE",
+    "GRAPHIC_DESIGN": "DESIGN GRAPHIQUE",
+    "VIDEO_EDITING": "MONTAGE VIDÉO",
+    "COMMUNITY_MANAGEMENT": "COMMUNITY MANAGEMENT",
+    "LOGISTICS_AND_TRANSPORT": "LOGISTIQUE ET TRANSPORT",
+    "CUSTOM_AND_TRANSIT": "DOUANE ET TRANSIT"
+  },
+  "Software": {
+    "Title": "Logiciels",
+    "Subtitle": "Apprenez à utiliser les logiciels les plus populaires et les plus demandés sur le marché."
+  },
+  "Vip": {
+    "Title": "VIP",
+    "Subtitle": "Accédez à des formations exclusives et à des ressources premium."
+  },
+  "Tech": {
+    "Title": "Technologie",
+    "Subtitle": "Restez à jour avec les dernières tendances et technologies du secteur."
+  },
+  "Testimonials": {
+    "Title": "Témoignages",
+    "Subtitle": "Ce que nos étudiants disent de nous."
+  },
+  "FAQ": {
+    "Title": "Questions Fréquemment Posées",
+    "Subtitle": "Trouvez des réponses à vos questions."
+  },
+  "Footer": {
+    "About_us": "À propos de nous",
+    "Contact_us": "Contactez-nous",
+    "Privacy_policy": "Politique de confidentialité",
+    "Terms_of_service": "Conditions d'utilisation",
+    "Follow_us": "Suivez-nous",
+    "Subscribe_to_our_newsletter": "Abonnez-vous à notre newsletter",
+    "Subscribe": "S'abonner"
   }
 }

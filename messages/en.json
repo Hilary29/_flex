@@ -27,10 +27,49 @@
     "Subtitle": "It is through learning that we unlock our potentials and shape a brighter future",
     "Explore_courses": "Explore courses"
   },
-  "Services": {
-    "title": "Step 2 Title",
-    "EXPLANATION_PARAGRAPH1": "lorem ipsum",
-    "EXPLANATION_PARAGRAPH2": "lorem ipsum",
-    "EXPLANATION_PARAGRAPH3": "lorem ipsum"
+  "Trainings": {
+    "Trainings": "Trainings",
+    "WEB_DEVELOPMENT": "WEB DEVELOPMENT",
+    "IT_MAINTENANCE": "IT MAINTENANCE",
+    "TELECOMMUNICATION": "TELECOMMUNICATION",
+    "DIGITAL_MARKETING": "DIGITAL MARKETING",
+    "ACCOUNTING_SECRETARY": "ACCOUNTING SECRETARY",
+    "EXECUTIVE_SECRETARY": "EXECUTIVE SECRETARY",
+    "OFFICE_SECRETARY": "OFFICE SECRETARY",
+    "GRAPHIC_DESIGN": "GRAPHIC DESIGN",
+    "VIDEO_EDITING": "VIDEO EDITING",
+    "COMMUNITY_MANAGEMENT": "COMMUNITY MANAGEMENT",
+    "LOGISTICS_AND_TRANSPORT": "LOGISTICS AND TRANSPORT",
+    "CUSTOM_AND_TRANSIT": "CUSTOM AND TRANSIT"
+  },
+  "Software": {
+    "Title": "Software",
+    "Subtitle": "Learn to use the most popular and in-demand software in the market."
+  },
+  "Vip": {
+    "Title": "VIP",
+    "Subtitle": "Access exclusive training and premium resources."
+  },
+  "Tech": {
+    "Title": "Technology",
+    "Subtitle": "Stay updated with the latest trends and technologies in the industry."
+  },
+  "Testimonials": {
+    "Title": "Testimonials",
+    "Subtitle": "What our students say about us."
+  },
+  "FAQ": {
+    "Title": "Frequently Asked Questions",
+    "Subtitle": "Find answers to your questions."
+  },
+  "Footer": {
+    "About_us": "About us",
+    "Contact_us": "Contact us",
+    "Privacy_policy": "Privacy policy",
+    "Terms_of_service": "Terms of service",
+    "Follow_us": "Follow us",
+    "Subscribe_to_our_newsletter": "Subscribe to our newsletter",
+    "Enter_your_email": "Enter your email",
+    "Subscribe": "Subscribe"
   }
 }
