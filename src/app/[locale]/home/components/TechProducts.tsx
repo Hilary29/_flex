@@ -6,59 +6,63 @@ import { Search, ShoppingCart } from "lucide-react"
 import ProductCard, { type ProductType } from "./product-card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl";
 
-// Product data
-const productsData: ProductType[] = [
+const getProductsData = (
+  t: ReturnType<typeof useTranslations>
+): ProductType[] => [
   {
     id: "usb-key",
-    name: "USB KEY",
+    name: t("Tech.USB"),
     image: "/key.png",
     alt: "USB key",
-    price: 15.99,
+    price: 3500,
     category: "storage",
-    description: "High-speed USB 3.0 flash drive with 32GB storage capacity for quick file transfers.",
+    description: t("Tech.USB_description"),
   },
   {
     id: "laptop",
     name: "LAPTOP",
     image: "/laptop.png",
     alt: "Laptop",
-    price: 699.99,
+    price: 75000,
     category: "computer",
-    description: "Powerful laptop with Intel Core i5 processor, 8GB RAM, and 256GB SSD for all your training needs.",
+    description: t("Tech.LAPTOP_description"),
   },
   {
     id: "charger",
     name: "CHARGER",
     image: "/charger.png",
     alt: "Charger",
-    price: 29.99,
+    price: 10000,
     category: "accessory",
-    description: "Fast-charging power adapter compatible with most laptops and mobile devices.",
+    description: t("Tech.CHARGER_description"),
   },
   {
     id: "mouse",
     name: "MOUSE",
     image: "/MOUSE.png",
     alt: "Mouse",
-    price: 24.99,
+    price: 3000,
     category: "accessory",
-    description: "Ergonomic wireless mouse with adjustable DPI settings for precision control.",
+    description: t("Tech.MOUSE_description"),
   },
   {
     id: "keyboard",
     name: "KEYBOARD",
     image: "/EYER.png",
     alt: "Keyboard",
-    price: 49.99,
+    price: 6000,
     category: "accessory",
-    description: "Comfortable mechanical keyboard with backlit keys for enhanced productivity.",
+    description: t("Tech.KEYBOARD_description"),
   },
 ]
 
 export default function TechProducts() {
   const [searchTerm, setSearchTerm] = useState("")
   const [cartCount, setCartCount] = useState(0)
+  const t = useTranslations();
+  const productsData = getProductsData(t);
 
   // Filter products based on search term
   const filteredProducts = productsData.filter((product) =>
@@ -90,10 +94,10 @@ export default function TechProducts() {
         className="text-center mb-10"
       >
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#373839] mb-3">
-          Get accessories for trainings here
+          {t("Tech.Title")}
         </h2>
         <p className="text-lg sm:text-xl text-[#535557] max-w-3xl mx-auto">
-          We propose quality training accessories to our students
+          {t("Tech.Subtitle")}
         </p>
       </motion.div>
 
@@ -152,19 +156,19 @@ export default function TechProducts() {
         transition={{ duration: 0.5, delay: 0.3 }}
         className="mt-16 bg-gray-50 p-6 rounded-lg"
       >
-        <h3 className="text-xl font-semibold mb-4 text-center">Special Student Offers</h3>
+        <h3 className="text-xl font-semibold mb-4 text-center">{t("Tech.Special_Student_Offers")}</h3>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
           <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex-1 max-w-xs">
-            <h4 className="font-medium text-[#1b3d74]">Student Discount</h4>
-            <p className="text-sm text-gray-600 mt-2">Get 15% off on all accessories with your student ID</p>
+            <h4 className="font-medium text-[#1b3d74]">{t("Tech.Student_Discount")}</h4>
+            <p className="text-sm text-gray-600 mt-2">{t("Tech.Student_Discount_Description")}</p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex-1 max-w-xs">
-            <h4 className="font-medium text-[#1b3d74]">Bundle Deals</h4>
-            <p className="text-sm text-gray-600 mt-2">Save up to 25% when you purchase multiple accessories together</p>
+            <h4 className="font-medium text-[#1b3d74]">{t("Tech.Bundle_Deals")}</h4>
+            <p className="text-sm text-gray-600 mt-2">{t("Tech.Bundle_Deals_Description")}</p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex-1 max-w-xs">
-            <h4 className="font-medium text-[#1b3d74]">Free Delivery</h4>
-            <p className="text-sm text-gray-600 mt-2">Free delivery on orders over $50 for registered students</p>
+            <h4 className="font-medium text-[#1b3d74]">{t("Tech.Free_Delivery")}</h4>
+            <p className="text-sm text-gray-600 mt-2">{t("Tech.Free_Delivery_Description")}</p>
           </div>
         </div>
       </motion.div>

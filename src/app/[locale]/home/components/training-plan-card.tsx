@@ -5,6 +5,7 @@ import { CircleIcon, TrendingUp, Award } from "lucide-react"
 import { cn } from "@/lib/utils"
 import RegisterButton from "./RegisterButton"
 import type { TrainingPlan } from "./vip-trainings"
+import { useTranslations } from "next-intl";
 
 interface TrainingPlanCardProps {
   plan: TrainingPlan
@@ -12,6 +13,7 @@ interface TrainingPlanCardProps {
 }
 
 export default function TrainingPlanCard({ plan, index = 0 }: TrainingPlanCardProps) {
+  const t = useTranslations();
   // Animation variants
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -46,7 +48,7 @@ export default function TrainingPlanCard({ plan, index = 0 }: TrainingPlanCardPr
         <div className="absolute top-0 right-0">
           <div className="bg-[#1b3d74] text-white text-xs font-bold px-3 py-1 rounded-bl-lg flex items-center">
             <Award className="h-3 w-3 mr-1" />
-            POPULAR
+            {t("Vip.POPULAR")}
           </div>
         </div>
       )}

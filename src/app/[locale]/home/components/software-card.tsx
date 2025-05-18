@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Info, X } from "lucide-react"
 import RegisterButton from "./RegisterButton"
+import { useTranslations } from "next-intl";
 
 export type SoftwareType = {
   id: string
@@ -21,6 +22,7 @@ interface SoftwareCardProps {
 
 export default function SoftwareCard({ software }: SoftwareCardProps) {
   const [showInfo, setShowInfo] = useState(false)
+  const t = useTranslations();
 
   // Animation variants for the card
   const cardVariants = {
@@ -72,7 +74,7 @@ export default function SoftwareCard({ software }: SoftwareCardProps) {
       {/* Buttons */}
       <div className="flex w-full border-t-2 border-[#1b3d74]">
         <button className="text-[#1b3d74] bg-white w-1/2 py-3 font-medium tracking-tight">{software.title}</button>
-        <RegisterButton className="w-1/2 rounded-none">REGISTER</RegisterButton>
+        <RegisterButton className="bg-[#000D85] hover:bg-[#010a62] w-1/2 rounded-none">{t("Header.Register")}</RegisterButton>
       </div>
 
       {/* Info Modal */}

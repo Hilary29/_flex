@@ -55,29 +55,93 @@
     "Subtitle": "We offer 100% practical courses in any software of your choice"
   },
   "Vip": {
-    "Title": "VIP",
-    "Subtitle": "Access exclusive training and premium resources."
+    "Title": "We offer trainings for everyone",
+    "Subtitle": "Choose the plan that is right for you and access exclusive and premium resources.",
+    "POPULAR": "POPULAR",
+    "VIP_TRAININGS": "VIP TRAININGS",
+    "subtitle_1": "We offer top quality tech related trainings",
+    "vip_1": "BOOK A TEACHER ",
+    "vip_2": "TRAINING I A SUPER FAST MODE",
+    "vip_3": "ANY OTHER TRAINING",
+    "vip_4": "ANY OTHER WORRY",
+    "SPECIAL_TRAININGS": "SPECIAL TRAININGS",
+    "subtitle_2": "Special trainings adapted to your needs",
+    "special_1": "ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING",
+    "special_2": "CYBERSECURITY AND CRYPTOSYSTEMS",
+    "special_3": "ALGORITHMS AND DATA STRUCTURE",
+    "special_4": "CLOUD COMPUTING"
+  },
+  "Why_Choose_us": {
+    "title": "Why Choose Us",
+    "subtitle": "Why Choose Our Training Programs?",
+    "Expert_Instructors": "Expert Instructors",
+    "Flexible_Schedule": "Flexible Schedule",
+    "Practical_Approach": "Practical Approach",
+    "Career_Support": "Career Support"
   },
   "Tech": {
-    "Title": "Technology",
-    "Subtitle": "Stay updated with the latest trends and technologies in the industry."
+    "Title": "Get accessories for trainings here",
+    "Subtitle": "We propose quality training accessories to our students",
+    "USB": "USB Key",
+    "LAPTOP": "LAPTOP",
+    "CHARGER": "CHARGER",
+    "MOUSE": "MOUSE",
+    "KEYBOARD": "KEYBOARD",
+    "USB_description": "High-speed USB 3.0 flash drive with 32GB storage capacity for quick file transfers.",
+    "LAPTOP_description": "Powerful laptop with Intel Core i5 processor, 8GB RAM, and 256GB SSD for all your training needs.",
+    "CHARGER_description": "Fast-charging power adapter compatible with most laptops and mobile devices.",
+    "MOUSE_description": "Ergonomic wireless mouse with adjustable DPI settings for precision control.",
+    "KEYBOARD_description": "Comfortable mechanical keyboard with backlit keys for enhanced productivity.",
+    "Special_Student_Offers": "Special Student Offers",
+    "Student_Discount": "Student Discount",
+    "Student_Discount_Description": "Get 10% off on all accessories with your student ID",
+    "Bundle_Deals": "Bundle Deals",
+    "Bundle_Deals_Description": "Save up to 20% when you purchase multiple accessories together",
+    "Free_Delivery": "Free Delivery",
+    "Free_Delivery_Description": "Free delivery on orders over 50000 FCFA for registered students"
   },
   "Testimonials": {
-    "Title": "Testimonials",
-    "Subtitle": "What our students say about us."
+    "Title": "TESTIMONIALS",
+    "Subtitle": "What our students say about us.",
+    "Testimonial_1": "FlexAcademy is a very dynamic center where lectures are very well explained and respect is given to every student.",
+    "Testimonial_2": "I had the best training experience in flex academy. Outstanding methods of teaching, very dynamic teachers, 100% practical courses they are one of the best"
   },
   "FAQ": {
     "Title": "Frequently Asked Questions",
-    "Subtitle": "Find answers to your questions."
+    "Subtitle": "Got questions? Check out the FAQs section to find the most common questions about FLEXACADEMY..",
+    "Question_1": "What is FlexAcademy ?",
+    "Answer_1": "Flex Academy is a leading training center focused on empowering individuals with the skills needed to succeed in today's fast-paced digital world. We offer hands-on courses in modern technologies. Flex Academy is the perfect place to unlock your potential and achieve your goals.",
+    "Question_2": "What is the difference between long term and short term programs ?",
+    "Answer_2": "A short term program is a program of less than 6 months where at the end an attestation is delivered to you, while a long term program is a one year program at the end of which you write the DQP exam and an attestation is delivered to you.",
+    "Question_3": "Can we have a discount ?",
+    "Answer_3": "We most of the time do promos and offer discounts in some courses. CONTACT US TO KNOW MORE.",
+    "Question_4": "Which certificate do you deliver ?",
+    "Answer_4": "We give you a MINEFOP-APPROVED CERTIFICATE.",
+    "Question_5": "How can we have a DQP ?",
+    "Answer_5": "As school resumes, you come and deposit your files for a long term training (a training of your choice) and start your school.",
+    "Question_6": "What are training sessions ?",
+    "Answer_6": "We have 2 training sessions (MORNING AND EVENING) this permits everyone even those working to get trained with us.",
+    "Question_7": "Do you offer online courses ?",
+    "Answer_7": "Yes, we offer flexible online learning options for many of our courses. Our virtual classroom provides the same quality education with the convenience of learning from anywhere.",
+    "Question_8": "How do I enroll in a course ?",
+    "Answer_8": "Enrollment is easy! You can register online through our website, visit our campus in person, or contact our admissions team by phone. We'll guide you through the process and help you select the right program for your goals.",
+    "Still_have_questions": "Still have questions ?",
+    "description": "If you couldn't find the answer to your question, feel free to contact our support team.",
+    "Contact_us": "Contact us"
   },
   "Footer": {
-    "About_us": "About us",
-    "Contact_us": "Contact us",
+    "description": "Empowering individuals with the skills needed to succeed in today's fast-paced digital world.",
+    "All_rights_reserved": "All rights reserved. FlexAcademy, a FlexGroup's company",
+    "LOCATION": "LOCATION",
+    "newsletter_description": "Subscribe to receive updates on new courses and events.",
+    "Thank_you_for_subscribing": "Thank you for subscribing !",
     "Privacy_policy": "Privacy policy",
     "Terms_of_service": "Terms of service",
-    "Follow_us": "Follow us",
-    "Subscribe_to_our_newsletter": "Subscribe to our newsletter",
-    "Enter_your_email": "Enter your email",
-    "Subscribe": "Subscribe"
+    "Home": "Home",
+    "Courses": "Courses",
+    "About_us": "About us",
+    "Contact": "Contact",
+    "FAQ": "FAQ",
+    "Privacy": "Privacy"
   }
 }

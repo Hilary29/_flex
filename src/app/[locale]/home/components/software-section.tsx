@@ -107,14 +107,14 @@ export default function SoftwareSection() {
         className="text-center mb-10"
       >
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#373839] mb-3">
-          {t("Trainings.Title")}
+          {t("Software.Title")}
         </h2>
         <p className="text-lg sm:text-xl text-[#535557] max-w-3xl mx-auto">
-          {t("Trainings.Subtitle")}
+          {t("Software.Subtitle")}
         </p>
       </motion.div>
 
-      <div className="flex flex-col sm:flex-row gap-4 mb-8 items-center">
+      <div className="hidden flex-col sm:flex-row gap-4 mb-8 items-center">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
           <Input

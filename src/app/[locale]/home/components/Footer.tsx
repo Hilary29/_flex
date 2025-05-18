@@ -1,30 +1,41 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, ArrowRight, Send } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Facebook,
+  Instagram,
+  Linkedin,
+  ArrowRight,
+  Send,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
-  const [email, setEmail] = useState("")
-  const [subscribed, setSubscribed] = useState(false)
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  const t = useTranslations();
 
   const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (email) {
       // Here you would typically send this to your API
-      console.log("Subscribing email:", email)
-      setSubscribed(true)
-      setEmail("")
-      setTimeout(() => setSubscribed(false), 3000)
+      console.log("Subscribing email:", email);
+      setSubscribed(true);
+      setEmail("");
+      setTimeout(() => setSubscribed(false), 3000);
     }
-  }
+  };
 
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-[#000D85] text-white">
@@ -35,7 +46,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">FLEX ACADEMY</h3>
             <p className="text-blue-100 mb-6">
-              Empowering individuals with the skills needed to succeed in today&apos;s fast-paced digital world.
+              {t("Footer.description")}
             </p>
             <div className="flex space-x-4">
               <Link
@@ -71,7 +82,7 @@ export default function Footer() {
           {/* Location section */}
           <div>
             <h3 className="text-xl font-bold mb-4 flex items-center">
-              <MapPin className="mr-2" size={20} /> LOCATION
+              <MapPin className="mr-2" size={20} /> {t("Footer.LOCATION")}
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -93,19 +104,28 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Phone size={16} className="mr-2" />
-                <a href="tel:+237699557415" className="text-blue-100 hover:text-white transition-colors">
+                <a
+                  href="tel:+237699557415"
+                  className="text-blue-100 hover:text-white transition-colors"
+                >
                   699 557 415
                 </a>
               </li>
               <li className="flex items-center">
                 <Phone size={16} className="mr-2" />
-                <a href="tel:+237675309658" className="text-blue-100 hover:text-white transition-colors">
+                <a
+                  href="tel:+237675309658"
+                  className="text-blue-100 hover:text-white transition-colors"
+                >
                   675 309 658
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail size={16} className="mr-2" />
-                <a href="mailto:flexacademy237@gmail.com" className="text-blue-100 hover:text-white transition-colors">
+                <a
+                  href="mailto:flexacademy237@gmail.com"
+                  className="text-blue-100 hover:text-white transition-colors"
+                >
                   flexacademy237@gmail.com
                 </a>
               </li>
@@ -115,8 +135,13 @@ export default function Footer() {
           {/* Newsletter section */}
           <div>
             <h3 className="text-xl font-bold mb-4">NEWSLETTER</h3>
-            <p className="text-blue-100 mb-4">Subscribe to receive updates on new courses and events.</p>
-            <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
+            <p className="text-blue-100 mb-4">
+              {t("Footer.newsletter_description")}
+            </p>
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col space-y-2"
+            >
               <div className="flex">
                 <Input
                   type="email"
@@ -140,7 +165,7 @@ export default function Footer() {
                   animate={{ opacity: 1, y: 0 }}
                   className="text-green-400 text-sm"
                 >
-                  Thank you for subscribing!
+                  {t("Footer.Thank_you_for_subscribing")}
                 </motion.p>
               )}
             </form>
@@ -150,7 +175,14 @@ export default function Footer() {
         {/* Quick links */}
         <div className="py-6 border-t border-blue-800">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {["Home", "Courses", "About Us", "Contact", "FAQ", "Privacy Policy"].map((link) => (
+            {[
+              t("Footer.Home"),
+              t("Footer.Courses"),
+              t("Footer.About_us"),
+              t("Footer.Contact"),
+              t("Footer.FAQ"),
+              t("Footer.Privacy"),
+            ].map((link) => (
               <Link
                 key={link}
                 href="#"
@@ -169,15 +201,15 @@ export default function Footer() {
         {/* Copyright */}
         <div className="py-6 border-t border-blue-800 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-blue-200 text-sm text-center sm:text-left mb-4 sm:mb-0">
-            © {currentYear} All rights reserved. FlexAcademy, a FlexGroup&apos;s company
+            © {currentYear} {t("Footer.All_rights_reserved")}
           </p>
           <div className="flex items-center space-x-2 text-sm text-blue-200">
             <Link href="#" className="hover:text-white transition-colors">
-              Terms
+              {t("Footer.Terms_of_service")}
             </Link>
             <span>•</span>
             <Link href="#" className="hover:text-white transition-colors">
-              Privacy
+              {t("Footer.Privacy_policy")}
             </Link>
             <span>•</span>
             <Link href="#" className="hover:text-white transition-colors">
@@ -187,5 +219,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

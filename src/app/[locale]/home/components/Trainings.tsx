@@ -241,13 +241,13 @@ export default function Trainings() {
           ))}
         </div>
       )}
-      <div className="flex flex-col sm:flex-row gap-4 mb-8 items-center justify-center pt-12">
-        <Button className="bg-[#000D85] hover:bg-[#010a62] px-6 py-4 rounded-full">
+      <div className="flex justify-center mt-8">
+        <Button className="bg-[#000D85] hover:bg-[#010a62] px-6 py-6 rounded-full">
           <span className="flex items-center text-base md:text-xl justify-center gap-1 ">
             {t("Header.Register")} <ArrowRight className="h-4 w-4" />
           </span>
         </Button>
-      </div>
+        </div>
     </section>
   );
 }

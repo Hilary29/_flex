@@ -29,7 +29,7 @@ export default function ProductCard({ product, index, onAddToCart }: ProductCard
   // Format price
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
+    currency: "XAF",
   }).format(product.price)
 
   // Animation variants
