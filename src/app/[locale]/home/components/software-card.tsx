@@ -1,27 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { Info, X } from "lucide-react"
-import RegisterButton from "./RegisterButton"
+import { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Info, X } from "lucide-react";
+import RegisterButton from "./RegisterButton";
 import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
 
 export type SoftwareType = {
-  id: string
-  title: string
-  logo: string
-  alt: string
-  category: string
-  description?: string
-}
+  id: string;
+  title: string;
+  logo: string;
+  alt: string;
+  category: string;
+  description?: string;
+};
 
 interface SoftwareCardProps {
-  software: SoftwareType
+  software: SoftwareType;
 }
 
 export default function SoftwareCard({ software }: SoftwareCardProps) {
-  const [showInfo, setShowInfo] = useState(false)
+  const [showInfo, setShowInfo] = useState(false);
   const t = useTranslations();
 
   // Animation variants for the card
@@ -36,12 +37,13 @@ export default function SoftwareCard({ software }: SoftwareCardProps) {
     },
     hover: {
       y: -5,
-      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      boxShadow:
+        "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       transition: {
         duration: 0.2,
       },
     },
-  }
+  };
 
   return (
     <motion.div
@@ -73,8 +75,12 @@ export default function SoftwareCard({ software }: SoftwareCardProps) {
 
       {/* Buttons */}
       <div className="flex w-full border-t-2 border-[#1b3d74]">
-        <button className="text-[#1b3d74] bg-white w-1/2 py-3 font-medium tracking-tight">{software.title}</button>
-        <RegisterButton className="bg-[#000D85] hover:bg-[#010a62] w-1/2 rounded-none">{t("Header.Register")}</RegisterButton>
+        <button className="text-[#1b3d74] bg-white w-1/2 py-3 font-medium tracking-tight">
+          {software.title}
+        </button>
+        <Button className="bg-[#000D85] hover:bg-[#010a62] w-1/2 rounded-none">
+          {t("Header.Register")}
+        </Button>
       </div>
 
       {/* Info Modal */}
@@ -85,7 +91,11 @@ export default function SoftwareCard({ software }: SoftwareCardProps) {
           exit={{ opacity: 0 }}
           className="absolute inset-0 bg-white/95 flex flex-col p-4 z-20"
         >
-          <button onClick={() => setShowInfo(false)} className="self-end p-1" aria-label="Close information">
+          <button
+            onClick={() => setShowInfo(false)}
+            className="self-end p-1"
+            aria-label="Close information"
+          >
             <X className="h-5 w-5 text-gray-600" />
           </button>
           <div className="flex-1 flex flex-col items-center justify-center gap-4 text-center">
@@ -96,12 +106,14 @@ export default function SoftwareCard({ software }: SoftwareCardProps) {
               height={60}
               className="object-contain"
             />
-            <h3 className="text-lg font-bold text-[#1b3d74]">{software.title}</h3>
+            <h3 className="text-lg font-bold text-[#1b3d74]">
+              {software.title}
+            </h3>
             <p className="text-gray-700">{software.description}</p>
             <RegisterButton className="mt-auto">REGISTER NOW</RegisterButton>
           </div>
         </motion.div>
       )}
     </motion.div>
-  )
+  );
 }

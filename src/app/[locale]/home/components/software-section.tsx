@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Search } from "lucide-react"
-import SoftwareCard, { type SoftwareType } from "./software-card"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Search } from "lucide-react";
+import SoftwareCard, { type SoftwareType } from "./software-card";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslations } from "next-intl";
 
 const softwareData: SoftwareType[] = [
@@ -15,7 +15,8 @@ const softwareData: SoftwareType[] = [
     logo: "/word-logo-8.png",
     alt: "WORD LOGO",
     category: "office",
-    description: "Master document creation, formatting, and professional writing with Microsoft Word.",
+    description:
+      "Master document creation, formatting, and professional writing with Microsoft Word.",
   },
   {
     id: "mail",
@@ -23,7 +24,8 @@ const softwareData: SoftwareType[] = [
     logo: "/112-gmail_email_mail-512.png",
     alt: "EMAIL LOGO",
     category: "communication",
-    description: "Learn effective email management, organization, and professional communication.",
+    description:
+      "Learn effective email management, organization, and professional communication.",
   },
   {
     id: "sage",
@@ -31,7 +33,8 @@ const softwareData: SoftwareType[] = [
     logo: "/sage-removebg-preview1.png",
     alt: "SAGE LOGO",
     category: "business",
-    description: "Gain expertise in accounting, financial management, and business operations with Sage.",
+    description:
+      "Gain expertise in accounting, financial management, and business operations with Sage.",
   },
   {
     id: "wordpress",
@@ -39,7 +42,8 @@ const softwareData: SoftwareType[] = [
     logo: "/Logo.png",
     alt: "WORDPRESS LOGO",
     category: "web",
-    description: "Build professional websites and blogs with the world's most popular content management system.",
+    description:
+      "Build professional websites and blogs with the world's most popular content management system.",
   },
   {
     id: "powerpoint",
@@ -47,7 +51,8 @@ const softwareData: SoftwareType[] = [
     logo: "/powerpoint1.png",
     alt: "POWER POINT LOGO",
     category: "office",
-    description: "Create engaging presentations and visual content with Microsoft PowerPoint.",
+    description:
+      "Create engaging presentations and visual content with Microsoft PowerPoint.",
   },
   {
     id: "odoo",
@@ -55,7 +60,8 @@ const softwareData: SoftwareType[] = [
     logo: "/Logo-1.png",
     alt: "ODOO LOGO",
     category: "business",
-    description: "Learn comprehensive business management with this all-in-one enterprise solution.",
+    description:
+      "Learn comprehensive business management with this all-in-one enterprise solution.",
   },
   {
     id: "excel",
@@ -63,7 +69,8 @@ const softwareData: SoftwareType[] = [
     logo: "/excel-logo-0.png",
     alt: "EXCEL LOGO",
     category: "office",
-    description: "Master data analysis, calculations, and visualization with Microsoft Excel.",
+    description:
+      "Master data analysis, calculations, and visualization with Microsoft Excel.",
   },
   {
     id: "photoshop",
@@ -71,21 +78,24 @@ const softwareData: SoftwareType[] = [
     logo: "/Logo-2.png",
     alt: "PHOTOSHOP LOGO",
     category: "design",
-    description: "Create and edit professional images with the industry-standard photo editing software.",
+    description:
+      "Create and edit professional images with the industry-standard photo editing software.",
   },
-]
+];
 
 export default function SoftwareSection() {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [activeTab, setActiveTab] = useState("all")
+  const [searchTerm, setSearchTerm] = useState("");
+  const [activeTab, setActiveTab] = useState("all");
   const t = useTranslations();
-  
+
   // Filter software based on search term and active tab
   const filteredSoftware = softwareData.filter((software) => {
-    const matchesSearch = software.title.toLowerCase().includes(searchTerm.toLowerCase())
-    if (activeTab === "all") return matchesSearch
-    return software.category === activeTab && matchesSearch
-  })
+    const matchesSearch = software.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    if (activeTab === "all") return matchesSearch;
+    return software.category === activeTab && matchesSearch;
+  });
 
   // Animation variants for staggered children
   const containerVariants = {
@@ -96,7 +106,7 @@ export default function SoftwareSection() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   return (
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -126,7 +136,12 @@ export default function SoftwareSection() {
           />
         </div>
         <div className="w-full sm:w-auto">
-          <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs
+            defaultValue="all"
+            value={activeTab}
+            onValueChange={setActiveTab}
+            className="w-full"
+          >
             <TabsList className="grid grid-cols-2 sm:grid-cols-5 w-full">
               <TabsTrigger value="all">All</TabsTrigger>
               <TabsTrigger value="office">Office</TabsTrigger>
@@ -140,12 +155,14 @@ export default function SoftwareSection() {
 
       {filteredSoftware.length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-lg text-gray-600">No software found matching your search.</p>
+          <p className="text-lg text-gray-600">
+            No software found matching your search.
+          </p>
           <button
             className="mt-4 px-4 py-2 bg-[#1b3d74] text-white rounded-md hover:bg-[#152f58] transition-colors"
             onClick={() => {
-              setSearchTerm("")
-              setActiveTab("all")
+              setSearchTerm("");
+              setActiveTab("all");
             }}
           >
             Reset Filters
@@ -164,5 +181,5 @@ export default function SoftwareSection() {
         </motion.div>
       )}
     </section>
-  )
+  );
 }
