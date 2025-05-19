@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 const FeatureShowcase: React.FC = () => {
   const features = [
@@ -8,13 +8,13 @@ const FeatureShowcase: React.FC = () => {
       title: "Learn a Language",
       description: "Master a new language with our interactive courses.",
       image: "/learn-language.jpg",
-      link: "../../Services/LearnLanguage",
+      link: "/learn-language",
     },
     {
       title: "Prepare for an Exam",
       description: "Get ready for important exams with tailored preparation plans.",
       image: "/prepare-exam.jpg",
-      link: "../../Services/PrepareExam",
+      link: "/prepare-exam",
     },
     {
       title: "Take a Level Test",

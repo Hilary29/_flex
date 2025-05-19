@@ -140,7 +140,7 @@ const Header2 = () => {
 
             <Link
               href="/Register"
-              className="px-6 py-2 bg-[#000D85] text-white rounded-full shadow-lg font-medium text-base"
+              className="px-6 py-2 bg-[#000D85] hover:bg-[#000D85] text-white rounded-full shadow-lg font-medium text-base"
             >
               {t("Header.Register")}
             </Link>

@@ -10,7 +10,7 @@ const StatisticsPage: React.FC = () => {
 
   return (
     <section
-      className="bg text-white py-16 px-4 md:px-8 lg:px-12"
+      className="bg-[#000D85] text-white py-16 px-4 md:px-8 lg:px-12"
       ref={ref}
       id="statistics"
     >
