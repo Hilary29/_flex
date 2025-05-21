@@ -1,16 +1,15 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Search, ShoppingCart } from "lucide-react"
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Search, ShoppingCart, Filter, X } from "lucide-react"
 import ProductCard, { type ProductType } from "./product-card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { useTranslations } from "next-intl";
+import { Badge } from "@/components/ui/badge"
+import { useTranslations } from "next-intl"
 
-const getProductsData = (
-  t: ReturnType<typeof useTranslations>
-): ProductType[] => [
+const getProductsData = (t: ReturnType<typeof useTranslations>): ProductType[] => [
   {
     id: "usb-key",
     name: t("Tech.USB"),
@@ -61,17 +60,53 @@ const getProductsData = (
 export default function TechProducts() {
   const [searchTerm, setSearchTerm] = useState("")
   const [cartCount, setCartCount] = useState(0)
-  const t = useTranslations();
-  const productsData = getProductsData(t);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [isSearchVisible, setIsSearchVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
-  // Filter products based on search term
-  const filteredProducts = productsData.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase()),
-  )
+  const t = useTranslations()
+  const productsData = getProductsData(t)
+
+  // Check if we're on mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkIfMobile()
+    window.addEventListener("resize", checkIfMobile)
+
+    return () => {
+      window.removeEventListener("resize", checkIfMobile)
+    }
+  }, [])
+
+  // Get unique categories
+  const categories = Array.from(new Set(productsData.map((product) => product.category)))
+
+  // Filter products based on search term and category
+  const filteredProducts = productsData.filter((product) => {
+    const matchesSearch =
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.description?.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesCategory = selectedCategory ? product.category === selectedCategory : true
+
+    return matchesSearch && matchesCategory
+  })
 
   // Handle adding to cart
   const handleAddToCart = () => {
     setCartCount((prev) => prev + 1)
+
+    // Show a brief animation or notification
+    const notification = document.createElement("div")
+    notification.className = "fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md z-50 animate-fade-in-out"
+    notification.textContent = t("Tech.Added_To_Cart")
+    document.body.appendChild(notification)
+
+    setTimeout(() => {
+      document.body.removeChild(notification)
+    }, 2000)
   }
 
   // Animation variants
@@ -85,63 +120,150 @@ export default function TechProducts() {
     },
   }
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  }
+
   return (
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Header with title and subtitle */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center mb-10"
+        className="text-center mb-12"
       >
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#373839] mb-3">
-          {t("Tech.Title")}
-        </h2>
-        <p className="text-lg sm:text-xl text-[#535557] max-w-3xl mx-auto">
-          {t("Tech.Subtitle")}
-        </p>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1b3d74] mb-4">{t("Tech.Title")}</h2>
+        <p className="text-lg sm:text-xl text-[#535557] max-w-3xl mx-auto">{t("Tech.Subtitle")}</p>
       </motion.div>
 
-      <div className="hidden  flex-col sm:flex-row gap-4 mb-8 items-center justify-between">
-        <div className="relative flex-1 max-w-md">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-          <Input
-            type="text"
-            placeholder="Search for accessories..."
-            className="pl-10"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-        <Button variant="outline" className="relative">
-          <ShoppingCart className="h-5 w-5 mr-2" />
-          Cart
-          {cartCount > 0 && (
-            <span className="absolute -top-2 -right-2 bg-[#1b3d74] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-              {cartCount}
-            </span>
-          )}
-        </Button>
-      </div>
+      {/* Search and filters bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
+        className="hidden mb-8 sticky top-0 z-10 bg-white/80 backdrop-blur-md py-4 rounded-lg shadow-sm"
+      >
+        <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+          {/* Mobile search toggle */}
+          {isMobile && (
+            <div className="flex w-full justify-between items-center">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setIsSearchVisible(!isSearchVisible)}
+                aria-label={isSearchVisible ? "Close search" : "Open search"}
+              >
+                {isSearchVisible ? <X className="h-5 w-5" /> : <Search className="h-5 w-5" />}
+              </Button>
 
+              <Button variant="outline" className="relative">
+                <ShoppingCart className="h-5 w-5 mr-2" />
+                <span>Cart</span>
+                {cartCount > 0 && (
+                  <Badge className="absolute -top-2 -right-2 bg-[#1b3d74] text-white">{cartCount}</Badge>
+                )}
+              </Button>
+            </div>
+          )}
+
+          {/* Search input - visible on desktop or when toggled on mobile */}
+          <AnimatePresence>
+            {(!isMobile || isSearchVisible) && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                className="relative flex-1 w-full md:max-w-md"
+              >
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <Input
+                  type="text"
+                  placeholder={"Search products..."}
+                  className="pl-10 w-full"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                {searchTerm && (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-6 w-6"
+                    onClick={() => setSearchTerm("")}
+                    aria-label="Clear search"
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Category filters */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 w-full md:w-auto">
+            <Filter className="h-4 w-4 text-gray-500 flex-shrink-0" />
+            <Button
+              variant={selectedCategory === null ? "default" : "outline"}
+              size="sm"
+              onClick={() => setSelectedCategory(null)}
+              className="flex-shrink-0"
+            >
+              {"All"}
+            </Button>
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={selectedCategory === category ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory(category)}
+                className="flex-shrink-0 capitalize"
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+
+          {/* Desktop cart button */}
+          {!isMobile && (
+            <Button variant="outline" className="relative flex-shrink-0">
+              <ShoppingCart className="h-5 w-5 mr-2" />
+              <span>Cart</span>
+              {cartCount > 0 && <Badge className="absolute -top-2 -right-2 bg-[#1b3d74] text-white">{cartCount}</Badge>}
+            </Button>
+          )}
+        </div>
+      </motion.div>
+
+      {/* No results message */}
       {filteredProducts.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-lg text-gray-600">No products found matching your search.</p>
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          animate="visible"
+          className="text-center py-16 bg-gray-50 rounded-lg"
+        >
+          <p className="text-lg text-gray-600 mb-4">{t("Tech.No_Products_Found")}</p>
           <Button
-            variant="outline"
-            className="mt-4"
             onClick={() => {
               setSearchTerm("")
+              setSelectedCategory(null)
             }}
           >
-            Reset Search
+            {t("Tech.Reset_Filters")}
           </Button>
-        </div>
+        </motion.div>
       ) : (
+        /* Products grid */
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6"
         >
           {filteredProducts.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} onAddToCart={handleAddToCart} />
@@ -149,27 +271,51 @@ export default function TechProducts() {
         </motion.div>
       )}
 
-      {/* Additional section for special offers */}
+      {/* Special offers section */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="mt-16 bg-gray-50 p-6 rounded-lg"
+        className="mt-20"
       >
-        <h3 className="text-xl font-semibold mb-4 text-center">{t("Tech.Special_Student_Offers")}</h3>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
-          <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex-1 max-w-xs">
-            <h4 className="font-medium text-[#1b3d74]">{t("Tech.Student_Discount")}</h4>
-            <p className="text-sm text-gray-600 mt-2">{t("Tech.Student_Discount_Description")}</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex-1 max-w-xs">
-            <h4 className="font-medium text-[#1b3d74]">{t("Tech.Bundle_Deals")}</h4>
-            <p className="text-sm text-gray-600 mt-2">{t("Tech.Bundle_Deals_Description")}</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex-1 max-w-xs">
-            <h4 className="font-medium text-[#1b3d74]">{t("Tech.Free_Delivery")}</h4>
-            <p className="text-sm text-gray-600 mt-2">{t("Tech.Free_Delivery_Description")}</p>
-          </div>
+        <h3 className="text-2xl font-bold text-[#1b3d74] mb-8 text-center">{t("Tech.Special_Student_Offers")}</h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Offer 1 */}
+          <motion.div
+            whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
+            className="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-md border border-blue-100"
+          >
+            <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+              <span className="text-[#1b3d74] font-bold text-xl">%</span>
+            </div>
+            <h4 className="font-semibold text-xl text-[#1b3d74] mb-2">{t("Tech.Student_Discount")}</h4>
+            <p className="text-gray-600">{t("Tech.Student_Discount_Description")}</p>
+          </motion.div>
+
+          {/* Offer 2 */}
+          <motion.div
+            whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
+            className="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-md border border-blue-100"
+          >
+            <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+              <span className="text-[#1b3d74] font-bold text-xl">+</span>
+            </div>
+            <h4 className="font-semibold text-xl text-[#1b3d74] mb-2">{t("Tech.Bundle_Deals")}</h4>
+            <p className="text-gray-600">{t("Tech.Bundle_Deals_Description")}</p>
+          </motion.div>
+
+          {/* Offer 3 */}
+          <motion.div
+            whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
+            className="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-md border border-blue-100"
+          >
+            <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+              <ShoppingCart className="h-6 w-6 text-[#1b3d74]" />
+            </div>
+            <h4 className="font-semibold text-xl text-[#1b3d74] mb-2">{t("Tech.Free_Delivery")}</h4>
+            <p className="text-gray-600">{t("Tech.Free_Delivery_Description")}</p>
+          </motion.div>
         </div>
       </motion.div>
     </section>

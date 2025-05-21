@@ -94,7 +94,7 @@ export default function FAQ() {
             >
               <div
                 className={cn(
-                  "bg-[#A6DBF4] rounded-lg overflow-hidden shadow-sm transition-all duration-200",
+                  "bg-[#e5f7ff] rounded-lg overflow-hidden shadow-sm transition-all duration-200",
                   activeIndex === faq.id ? "shadow-md" : ""
                 )}
               >

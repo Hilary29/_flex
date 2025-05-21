@@ -92,9 +92,9 @@ export default function ProductCard({ product, index, onAddToCart }: ProductCard
           <span className="font-bold">{formattedPrice}</span>
         </div>
         <div className="flex w-full gap-2">
-          <Button variant="outline" className="flex-1 border-[#1b3d74] text-[#1b3d74] hover:bg-[#1b3d74]/10">
+{/*           <Button variant="outline" className="flex-1 border-[#1b3d74] text-[#1b3d74] hover:bg-[#1b3d74]/10">
             {product.name}
-          </Button>
+          </Button> */}
           <Button className="flex-1 bg-[#1b3d74] hover:bg-[#152f58]" onClick={onAddToCart}>
             <ShoppingCart className="h-4 w-4 mr-2" />
             PURCHASE

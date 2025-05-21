@@ -6,9 +6,6 @@ import TopNavbar from "../home/components/TopNavbar";
 import Footer from "../home/components/Footer";
 import FAQ from "../home/components/FAQ";
 import Testimonials from "../home/components/Testimonials";
-/* import Tech_Products from '../home/components/TechProducts'
-import VIP_trainings from '../home/components/vip-trainings'
- */
 import Hero from "../home/components/Hero";
 import FeatureShowcase from "../home/components/FeatureShowcase";
 import LanguageGallery from "../home/components/LanguageGallery";
@@ -29,10 +26,6 @@ const Page = () => {
       <LanguageGallery />
       <AboutPage />
       <ImmigrationPage />
-      {/*       <TestimonialPage/> */}
-
-      {/*       <VIP_trainings />
-      <Tech_Products /> */}
       <Testimonials />
       <StatisticsPage/>
       <FAQ />
