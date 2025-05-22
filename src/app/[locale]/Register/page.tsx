@@ -9,7 +9,7 @@ export default function Home() {
       <div> 
         <TopNavbar/>
         <Header/>
-        <div className="pt-36">
+        <div className="py-36">
           <Register_page/>
         </div>
         <Footer/>

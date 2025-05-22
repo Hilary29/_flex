@@ -75,8 +75,7 @@ const Register_page: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    //const whatsappNumber = "+237696696927"; 
-    const whatsappNumber = "+237690188239";// Replace with your WhatsApp number
+    const whatsappNumber = "+237696696927"; // Replace with your WhatsApp number
 
     let message = `*Registration Form*\n\nName: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phoneNumber}\nAddress: ${formData.address}\nSession: ${formData.session}\nCenter: ${formData.center}\nCategory: ${formData.category}\n`;
 
@@ -599,7 +598,7 @@ const Register_page: React.FC = () => {
         )}
         <button
           type="submit"
-          className="w-full p-3 mt-4 bg-blue-500 text-white rounded-md"
+          className="w-full p-3 mt-4 bg-[#000D85] text-white rounded-md"
         >
           Submit
         </button>
