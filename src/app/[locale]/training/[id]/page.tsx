@@ -22,8 +22,7 @@ export async function generateMetadata({ params }: { params: { id: string; local
 }
 
 export default async function page({ params }: { params: { id: string; locale: string } }) {
-  const t = await getTranslations("Trainings")
-  const commonT = await getTranslations("Common")
+  const t = await getTranslations()
   const training = await getTrainingById(params.id, t)
 
   if (!training) {
@@ -35,7 +34,7 @@ export default async function page({ params }: { params: { id: string; locale: s
       <div className="mb-6">
         <Link href="/Trainings" className="inline-flex items-center text-[#1b3d74] hover:underline">
           <ArrowLeft className="mr-2 h-4 w-4" />
-          {commonT("back_to_trainings")}
+          {("back_to_trainings")}
         </Link>
       </div>
 
@@ -84,7 +83,7 @@ export default async function page({ params }: { params: { id: string; locale: s
         </div>
 
         <div className="md:col-span-1">
-          <div className="bg-white rounded-lg shadow-md p-6 sticky top-8">
+          <div className="bg-white rounded-lg shadow-md p-6 sticky top-32">
             <h3 className="text-xl font-semibold text-[#1b3d74] mb-4">{t("practical_info")}</h3>
 
             <div className="space-y-4">
