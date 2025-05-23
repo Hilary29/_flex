@@ -2,7 +2,6 @@
 
 import React from "react";
 import Header2 from "../home/components/Header2";
-import TopNavbar from "../home/components/TopNavbar";
 import Footer from "../home/components/Footer";
 import FAQ from "../home/components/FAQ";
 import Testimonials from "../home/components/Testimonials";
@@ -17,7 +16,6 @@ import StatisticsPage from "../home/components/StatisticsPage";
 const Page = () => {
   return (
     <div className="min-h-screen">
-      <TopNavbar />
       <Header2 />
       <div className="mt-0">
         <Hero />

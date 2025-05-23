@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import TopNavbar from "./TopNavbar";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Link } from "@/i18n/routing";
@@ -17,9 +16,8 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
-      <TopNavbar />
-      <div className=" mx-auto mt-8 px-4 md:px-8 flex flex-col items-center justify-between">
+    <header className="fixed top-8 left-0 w-full bg-white shadow-sm z-50">
+      <div className=" mx-auto mt-0 px-4 md:px-8 flex flex-col items-center justify-between">
         <div className="w-full flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">

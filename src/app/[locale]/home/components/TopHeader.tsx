@@ -27,7 +27,7 @@ const TopHeader: React.FC<TopHeaderProps> = ({ content }) => {
   }, [content]);
 
   return (
-    <div className="fixed top-0 left-0 right-0 py-0.5 lg:py-1 bg-[#000D85] text-white font-semibold text-center z-10">
+    <div className="fixed top-0 left-0 right-0 py-0.5 lg:py-1 bg-[#000D85] text-white font-semibold text-center z-50">
       <div
         className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'} ${fadeOut ? 'opacity-0' : ''}`}
       >

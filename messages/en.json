@@ -49,7 +49,17 @@
     "Technology": "Technology",
     "Business": "Business",
     "Creative": "Creative",
-    "Logistics": "Logistics"
+    "Logistics": "Logistics",
+    "Back_to_trainings": "Back to trainings",
+    "objectives": "Objectives",
+    "program": "Program",
+    "prerequisites": "Prerequisites",
+    "practical_information": "Practical Information",
+    "duration": "Duration",
+    "target_audience": "Target Audience",
+    "modalities": "Modalities",
+    "next_sessions": "Next Sessions",
+    "register": "Register"
   },
   "Software": {
     "Title": "Join us to learn any specific software of your choice",

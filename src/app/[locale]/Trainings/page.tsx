@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import {  Search } from "lucide-react";
+import { ChevronRight, Search } from "lucide-react";
 import TrainingCard from "../home/components/training-card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -16,6 +15,7 @@ import {
 import { useTranslations } from "next-intl";
 import Footer from "../home/components/Footer";
 import Header from "../home/components/Header";
+import { Link } from "@/i18n/routing";
 
 type TrainingType = {
   id: string;
@@ -173,23 +173,23 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mx-auto">
       <Header />
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-44 md:pt-40 pb-32">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-10"
-        >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#373839] mb-3">
-            {t("Trainings.Title")}
-          </h2>
-          <p className="text-lg sm:text-xl text-[#535557] max-w-3xl mx-auto">
-            {t("Trainings.Subtitle")}
-          </p>
-        </motion.div>
-
+      <div className="bg-[#1b3d74] text-white pb-8 pt-36 px-4">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl md:text-4xl font-bold">
+            {t("Trainings.Trainings")}
+          </h1>
+          <div className="flex items-center mt-4 text-sm">
+            <Link href="/" className="hover:underline">
+              {t("Header.Home")}
+            </Link>
+            <ChevronRight className="h-4 w-4 mx-2" />
+            <span>{t("Trainings.Trainings")}</span>
+          </div>
+        </div>
+      </div>
+      <section className="w-full  mx-auto px-4 sm:px-8 lg:px-20 pt-44 md:pt-8 pb-32">
         <div className="flex flex-col sm:flex-row gap-4 mb-8">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -255,7 +255,7 @@ export default function Home() {
             ))}
           </div>
         )}
-{/*         <div className="flex justify-center mt-8">
+        {/*         <div className="flex justify-center mt-8">
           <Link
             href="/Trainings"
             className="bg-[#000D85] hover:bg-[#010a62] px-6 py-3 rounded-full"

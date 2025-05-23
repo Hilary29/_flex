@@ -72,7 +72,7 @@ export default function HeroSection() {
                 {t('Hero.Engage_training')}
               </button>
             </Link>
-            <Link href="/Trainings">
+            <Link href="/Software">
               <button className="text-base sm:text-xl bg-[#000D85] px-6 py-3 rounded-3xl text-white font-medium hover:bg-[#000a6b] transition-colors duration-300 min-w-[200px] sm:min-w-0">
                 {t('Hero.Learn_software')}
               </button>

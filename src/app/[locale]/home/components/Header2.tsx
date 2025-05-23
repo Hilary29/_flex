@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { Menu, X } from "lucide-react";
-import TopNavbar from "./TopNavbar";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 
@@ -40,8 +39,7 @@ const Header2 = () => {
         isScrolled ? "bg-white" : "bg-transparent"
       } shadow-sm z-50 transition-colors duration-300  `}
     >
-      <TopNavbar />
-      <div className=" mx-auto mt-8 px-4 md:px-8 flex flex-col items-center justify-between">
+      <div className=" mx-auto mt-0 px-4 md:px-8 flex flex-col items-center justify-between">
         <div className="w-full flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">

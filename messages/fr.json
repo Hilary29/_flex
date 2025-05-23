@@ -17,8 +17,8 @@
   "Hero": {
     "Title": "BIENVENUE CHEZ FLEXACADEMY",
     "Subtitle": "C'est en apprenant que nous libérons notre potentiel et construisons un avenir meilleur.",
-    "Engage_training": "Commencez une formation",
-    "Learn_software": "Apprenez un logiciel"
+    "Engage_training": "S'inscrire à une formation",
+    "Learn_software": "Apprendre un logiciel"
   },
   "Language_Hero": {
     "Title": "Apprenez les langues avec confiance",
@@ -49,7 +49,17 @@
     "Technology": "Technologie",
     "Business": "Business",
     "Creative": "Créatif",
-    "Logistics": "Logistique"
+    "Logistics": "Logistique",
+    "Back_to_trainings": "Retour aux formations",
+    "objectives": "Objectifs",
+    "program": "Programme",
+    "prerequisites": "Prérequis",
+    "practical_information": "Informations pratiques",
+    "duration": "Durée",
+    "target_audience": "Public cible",
+    "modalities": "Modalités",
+    "next_sessions": "Prochaines sessions",
+    "register": "S'inscrire"
   },
   "Software": {
     "Title": "Rejoignez-nous pour apprendre un logiciel spécifique de votre choix",
