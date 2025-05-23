@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 type TrainingType = {
   id: string;
@@ -186,7 +187,7 @@ export default function Trainings() {
         </p>
       </motion.div>
 
-      <div className="flex flex-col sm:flex-row gap-4 mb-8">
+      <div className="hidden flex-col sm:flex-row gap-4 mb-8">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
           <Input
@@ -242,11 +243,11 @@ export default function Trainings() {
         </div>
       )}
       <div className="flex justify-center mt-8">
-        <Button className="bg-[#000D85] hover:bg-[#010a62] px-6 py-6 rounded-full">
-          <span className="flex items-center text-base md:text-xl justify-center gap-1 ">
-            {t("Header.Register")} <ArrowRight className="h-4 w-4" />
+        <Link href="/Trainings" className="bg-[#000D85] hover:bg-[#010a62] px-6 py-3 rounded-full">
+          <span className="flex items-center text-base md:text-xl text-white font-semibold justify-center gap-1 ">
+            {t("Header.See_more")} <ArrowRight className="h-4 w-4" />
           </span>
-        </Button>
+        </Link>
         </div>
     </section>
   );

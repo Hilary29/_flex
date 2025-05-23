@@ -2,6 +2,7 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { Link } from "@/i18n/routing"
 
 export type TrainingType = {
   id: string
@@ -43,9 +44,9 @@ export default function TrainingCard({ training, index, showDescription = false,
       </div>
 
       <div className="flex w-full gap-2 mt-auto">
-        <button className="text-[#1b3d74] bg-white border-2 border-[#1b3d74] flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-colors hover:bg-[#1b3d74]/5 focus:outline-none focus:ring-2 focus:ring-[#1b3d74]/50">
+        <Link href="/Trainings" className="text-[#1b3d74] text-center bg-white border-2 border-[#1b3d74] flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-colors hover:bg-[#1b3d74]/5 focus:outline-none focus:ring-2 focus:ring-[#1b3d74]/50">
           {training.title}
-        </button>
+        </Link>
 
       </div>
     </motion.div>
