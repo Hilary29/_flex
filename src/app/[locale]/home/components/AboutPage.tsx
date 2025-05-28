@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 const AboutPage: React.FC = () => {
   const textRef = useRef<HTMLDivElement>(null); // Reference for the text container
@@ -20,13 +20,14 @@ const AboutPage: React.FC = () => {
       { threshold: 0.2 } // Trigger when 20% of the section is visible
     );
 
-    if (textRef.current) {
-      observer.observe(textRef.current);
+    const currentRef = textRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (textRef.current) {
-        observer.unobserve(textRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

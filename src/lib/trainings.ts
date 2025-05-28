@@ -120,7 +120,7 @@ export async function getTrainingById(
   t: ReturnType<typeof useTranslations>
 ): Promise<TrainingType | undefined> {
   // Simuler un délai de chargement pour démontrer le composant loading.tsx
-  await new Promise((resolve) => setTimeout(resolve, 500))
+  await new Promise((resolve) => setTimeout(resolve, 0))
 
   return getTrainingsData(t).find((training) => training.id === id)
 }
